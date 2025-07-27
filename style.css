@@ -87,4 +87,72 @@ footer {
     margin-right: 5px;
 }
 
-/* Media queries for responsiveness */ 
+/* Media queries for responsiveness */
+
+.game-icons {
+    margin-top: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-icons h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* アイコン間のスペース */
+}
+
+.game-icon-link {
+    display: block;
+    width: 200px;
+    /* アイコンの幅 */
+    height: 200px;
+    /* アイコンの高さ */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.game-icon-link:hover {
+    transform: translateY(-5px);
+    /* ホバー時のアニメーション */
+}
+
+.game-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 画像がコンテナに収まるように調整 */
+    display: block;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .icon-grid {
+        justify-content: center;
+    }
+
+    .game-icon-link {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-icon-link {
+        width: 120px;
+        height: 120px;
+    }
+}

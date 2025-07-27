@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>なまたまご公式サイト</title>
     <meta name="description" content="ゲームと思想をつむぐ開発者のポートフォリオ">
+    <!-- OGP Tags for index.html -->
+    <meta property="og:title" content="なまたまご公式サイト">
+    <meta property="og:description" content="ゲームと思想をつむぐ開発者のポートフォリオ">
+    <meta property="og:url" content="https://egg3d.github.io/">
+    <meta property="og:image" content="Images/egg_3d.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="なまたまご公式サイト">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@egg_3d">
+    <!-- End OGP Tags -->
     <link rel="apple-touch-icon" sizes="180x180" href="Images/egg_3d_Favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="Images/egg_3d_Favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Images/egg_3d_Favicon/favicon-16x16.png">
     <link rel="manifest" href="Images/egg_3d_Favicon/site.webmanifest">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="all.min.css">
+    <script src="load-common.js"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1><a href="/">なまたまご公式サイト<i class="fa-brands fa-x-twitter"></i></a></h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html"><i class="fa-solid fa-house"></i> ホーム</a></li>
-                    <li><a href="about.html"><i class="fa-solid fa-user"></i> なまたまごとは</a></li>
-                    <li><a href="bound-itch.html"><i class="fa-solid fa-rocket"></i> BOUND</a></li>
-                    <li><a href="fallwords-itch.html"><i class="fa-solid fa-gamepad"></i> FallWords</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
+<body>
     <main class="container">
         <article>
             <h2>なまたまごの世界</h2>
             <p>🎮 <strong>FallWords</strong>、🚀 <strong>RevRev</strong> など、日々ゲーム制作に挑戦中。</p>
             <p>このサイトでは、制作したゲームや開発の裏話、思想記事《問いを作る日々》などをまとめています。</p>
         </article>
+
+        <section class="game-icons">
+            <h3>作品一覧</h3>
+            <div class="icon-grid">
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 なまたまご公式サイト. All rights reserved. 
-                <a href="https://egg-3d.itch.io/" target="_blank" title="itch.io"><i class="fa-brands fa-itch-io"></i></a>
-                <a href="https://github.com/egg3d" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://unityroom.com/users/egg_3d" target="_blank" title="unityroom"><img src="Images/unityroom.png" alt="unityroom" class="icon-unityroom"></a>
-            </p>
-        </div>
-    </footer>
+
 </body>
-</html> 
+<script src="scripts.js"></script>
+
+</html>
