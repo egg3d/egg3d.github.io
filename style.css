@@ -77,4 +77,14 @@ footer {
     background: #333;
     color: #fff;
     margin-top: 20px;
-} 
+}
+
+.icon-unityroom {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Media queries for responsiveness */ 
