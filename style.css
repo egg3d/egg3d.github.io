@@ -1,10 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: "Nunito", "Kiwi Maru", "Noto Sans JP", sans-serif;
     margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    color: #333;
 }
 
 .container {
@@ -112,17 +108,22 @@ footer {
 }
 
 .game-icon-link {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     width: 200px;
     /* アイコンの幅 */
-    height: 200px;
-    /* アイコンの高さ */
+    height: auto;
+    /* 高さを自動調整 */
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
     text-decoration: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
+    padding-bottom: 10px;
+    /* テキストとアイコンの間の余白 */
 }
 
 .game-icon-link:hover {
@@ -133,9 +134,24 @@ footer {
 .game-icon {
     width: 100%;
     height: 100%;
+    max-height: 200px;
+    /* アイコンの最大高さを設定 */
     object-fit: cover;
     /* 画像がコンテナに収まるように調整 */
     display: block;
+}
+
+.game-name {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.game-description {
+    font-size: 0.9em;
+    color: #666;
+    padding: 0 10px;
 }
 
 /* レスポンシブ対応 */
@@ -146,13 +162,21 @@ footer {
 
     .game-icon-link {
         width: 150px;
-        height: 150px;
+        height: auto;
+    }
+
+    .game-icon {
+        max-height: 150px;
     }
 }
 
 @media (max-width: 480px) {
     .game-icon-link {
         width: 120px;
-        height: 120px;
+        height: auto;
+    }
+
+    .game-icon {
+        max-height: 120px;
     }
 }

@@ -27,4 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         gtag('config', '${gaMeasurementId}');
     `;
     document.head.appendChild(script2);
+
+    // Font Awesome Kit Embed Code
+    const fontAwesomeScript = document.createElement('script');
+    fontAwesomeScript.src = "https://kit.fontawesome.com/27aea62943.js";
+    fontAwesomeScript.crossOrigin = "anonymous";
+    document.head.appendChild(fontAwesomeScript);
 }); 
