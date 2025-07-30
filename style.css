@@ -180,3 +180,19 @@ footer {
         max-height: 120px;
     }
 }
+
+
+.game-section {
+    background-image: url('Images/game egg.png');
+    background-size: 400px auto;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.namatamago-section {
+    background-image: url('Images/what egg.png');
+    background-size: contain;
+    background-size: 400px auto;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
