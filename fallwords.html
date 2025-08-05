@@ -31,7 +31,7 @@
     <main class="container">
         <article>
             <h2>FallWords</h2>
-            <div style="text-align:center">
+            <div id="game-embed-area" style="text-align:center">
                 <img src="Images/FallWords.gif" alt="FallWords Gameplay GIF"
                     style="width:256px; height:256px; object-fit:cover; margin-bottom: 20px;">
                 <br>
@@ -40,19 +40,78 @@
                         itch.io</a></iframe>
             </div>
 
+            <div class="version-button-container">
+                <button id="ver1-button" class="version-button">ver.1.0</button>
+                <button id="ver2-button" class="version-button">ver.2.0</button>
+                <button id="ver3-button" class="version-button">ver.3.0</button>
+                <button id="ver4-button" class="version-button">ver.4.0</button>
+                <button id="ver5-button" class="version-button">ver.5.0</button>
+                <button id="latest-button" class="version-button">Latest</button>
+            </div>
+
             <hr>
 
             <p>🎮 <strong>FallWords</strong> は、タイピング×アクションのハイブリッドゲームです。</p>
             <ul>
-                <li>対応キーを<strong>長押しチャージ</strong></li>
-                <li>適切なタイミングで<strong>風船を撃ち落とす</strong></li>
-                <li>属性チャージ、地雷弾、連打タイピングなど多彩な要素！</li>
+                <li>適切なタイミングで風船を撃ち落とす</li>
+                <li>白いアイテム風船を撃って形勢逆転！</li>
             </ul>
 
         </article>
     </main>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const gameEmbedArea = document.getElementById('game-embed-area');
+            const ver1Button = document.getElementById('ver1-button');
+            const ver2Button = document.getElementById('ver2-button');
+            const latestButton = document.getElementById('latest-button');
 
+            // 初期表示時も最新版をロード
+            //配布するページ　Embed GameにEmbed用のURLがある！！！
+            //公開設定にしないと埋め込んでも表示されない！
+            //一つのプロジェクトに沢山のbuildをアップロードできるからその方が良い！
+            function loadGameVersion(src, height, link, linkText) {
+                gameEmbedArea.innerHTML = `
+                    <img src="Images/FallWords.gif" alt="FallWords Gameplay GIF"
+                        style="width:256px; height:256px; object-fit:cover; margin-bottom: 20px;">
+                    <br>
+                    <iframe frameborder="0" src="${src}" allowfullscreen="" width="960" height="${height}"><a href="${link}">${linkText}</a></iframe>
+                `;
+            }
+
+            // ページロード時に最新版をロード
+            loadGameVersion("https://itch.io/embed-upload/14321572?color=333333", "560", "https://egg-3d.itch.io/fallwords", "Play FallWords on itch.io");
+
+            ver1Button.addEventListener('click', function () {
+                loadGameVersion("https://itch.io/embed-upload/14563809?color=333333", "600", "https://egg-3d.itch.io/fallwords-1", "Play FallWords-1 on itch.io");
+            });
+
+            ver2Button.addEventListener('click', function () {
+                loadGameVersion("https://itch.io/embed-upload/14564134?color=333333", "540", "https://egg-3d.itch.io/fallwords-1", "Play FallWords-1 on itch.io");
+            });
+
+            const ver3Button = document.getElementById('ver3-button');
+            const ver4Button = document.getElementById('ver4-button');
+            const ver5Button = document.getElementById('ver5-button');
+
+            ver3Button.addEventListener('click', function () {
+                loadGameVersion("https://itch.io/embed-upload/14564139?color=333333", "540", "https://egg-3d.itch.io/fallwords-1", "Play FallWords-1 on itch.io");
+            });
+
+            ver4Button.addEventListener('click', function () {
+                loadGameVersion("https://itch.io/embed-upload/14564141?color=333333", "540", "https://egg-3d.itch.io/fallwords-1", "Play FallWords-1 on itch.io");
+            });
+
+            ver5Button.addEventListener('click', function () {
+                loadGameVersion("https://itch.io/embed-upload/14564140?color=333333", "540", "https://egg-3d.itch.io/fallwords-1", "Play FallWords-1 on itch.io");
+            });
+
+            latestButton.addEventListener('click', function () {
+                loadGameVersion("https://itch.io/embed-upload/14321572?color=333333", "560", "https://egg-3d.itch.io/fallwords", "Play FallWords on itch.io");
+            });
+        });
+    </script>
 </body>
 
 </html>

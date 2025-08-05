@@ -196,3 +196,38 @@ footer {
     background-repeat: no-repeat;
     background-position: right center;
 }
+
+.version-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* ボタン間のスペース */
+    margin-bottom: 20px;
+}
+
+.version-button {
+    background-color: #727272;
+    /* Green */
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    min-width: 120px;
+    /* 最小幅を統一 */
+    box-sizing: border-box;
+    /* paddingとborderをwidth/heightに含める */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* ホバーアニメーションの追加 */
+}
+
+.version-button:hover {
+    background-color: #727272;
+    transform: translateY(-2px);
+    /* ホバー時に少し上に移動 */
+}
