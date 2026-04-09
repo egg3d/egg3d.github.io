@@ -1,36 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.body.insertAdjacentHTML('afterbegin', data);
-        });
+document.addEventListener("DOMContentLoaded", async () => {
+    const insertFragment = async (path, target, position) => {
+        const response = await fetch(path);
+        if (!response.ok) {
+            throw new Error(`${path} could not be loaded.`);
+        }
+        const html = await response.text();
+        target.insertAdjacentHTML(position, html);
+    };
 
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.body.insertAdjacentHTML('beforeend', data);
-        });
+    try {
+        await insertFragment("header.html", document.body, "afterbegin");
+        await insertFragment("footer.html", document.body, "beforeend");
 
-    // Google Analytics Tracking Code
-    const gaMeasurementId = 'G-C15BSFR0VG'; // Google Analyticsの測定ID
+        const activePage = document.body.dataset.page;
+        const activeSlug = document.body.dataset.gameSlug;
+        const activeNav = activePage === "game" ? activeSlug : activePage;
+        const activeLink = document.querySelector(`[data-nav="${activeNav}"]`);
+        if (activeLink) {
+            activeLink.classList.add("is-active");
+        }
+    } catch (error) {
+        console.error(error);
+    }
 
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
-    document.head.appendChild(script1);
+    const gaMeasurementId = "G-C15BSFR0VG";
+    if (!window.__eggAnalyticsLoaded) {
+        const script1 = document.createElement("script");
+        script1.async = true;
+        script1.src = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
+        document.head.appendChild(script1);
 
-    const script2 = document.createElement('script');
-    script2.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${gaMeasurementId}');
-    `;
-    document.head.appendChild(script2);
-
-    // Font Awesome Kit Embed Code
-    const fontAwesomeScript = document.createElement('script');
-    fontAwesomeScript.src = "https://kit.fontawesome.com/27aea62943.js";
-    fontAwesomeScript.crossOrigin = "anonymous";
-    document.head.appendChild(fontAwesomeScript);
-}); 
+        const script2 = document.createElement("script");
+        script2.textContent = `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gaMeasurementId}');
+        `;
+        document.head.appendChild(script2);
+        window.__eggAnalyticsLoaded = true;
+    }
+});
