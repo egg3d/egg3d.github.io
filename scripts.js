@@ -411,7 +411,7 @@ const games = [
         title: "Gumball Rush Tycoon",
         shortTitle: "Gumball Rush",
         tagline: "回して集めて強化するタイクーン",
-        description: "マシンを強化しながらガムボールを量産し、より大きなキャンディ帝国を目指す Roblox 作品です。BOOST や FEVER、実績報酬やランキングを組み合わせた成長型のタイクーンにしています。",
+        description: "マシンを強化しながらガムボールを量産するゲームです。BOOST や FEVER、実績報酬やランキングを組み合わせた成長型のタイクーンにしています。",
         cardDescription: "回して集めて強化するタイクーンです。",
         status: "公開中",
         genre: "Tycoon",
