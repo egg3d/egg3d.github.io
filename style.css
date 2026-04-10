@@ -184,6 +184,19 @@ main.page-shell {
 
 .policy-hero-copy {
     color: var(--text);
+    display: flex;
+    justify-content: center;
+}
+
+.policy-hero-inner {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.policy-hero-inner .hero-description {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-copy,
@@ -270,9 +283,10 @@ main.page-shell {
 
 .policy-meta {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 320px));
     gap: 14px;
     margin-top: 26px;
+    justify-content: center;
 }
 
 .policy-meta-item {
@@ -280,6 +294,7 @@ main.page-shell {
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
 }
 
 .policy-meta-label {
@@ -658,9 +673,10 @@ main.page-shell {
 }
 
 .game-summary-description {
-    max-width: 32ch;
+    max-width: 40ch;
     margin: 0 0 24px;
     color: var(--text-soft);
+    text-wrap: pretty;
 }
 
 .game-media-panel {
@@ -730,7 +746,6 @@ main.page-shell {
 }
 
 .media-visual-video {
-    border: 2px solid rgba(255, 255, 255, 0.96);
 }
 
 .media-visual::after {
@@ -782,23 +797,6 @@ main.page-shell {
     line-height: 1.5;
     text-align: center;
     backdrop-filter: blur(12px);
-}
-
-.media-progress {
-    position: absolute;
-    top: var(--media-stage-top);
-    right: var(--media-frame-side);
-    z-index: 1;
-    display: inline-flex;
-    gap: 6px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    background: rgba(19, 33, 63, 0.1);
-    color: var(--text-dark);
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    border: 1px solid rgba(68, 100, 176, 0.12);
 }
 
 .media-nav {

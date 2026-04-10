@@ -30,6 +30,10 @@ const games = [
             {
                 label: "公開ページ",
                 value: '<a href="https://unityroom.com/games/bound_egg" target="_blank" rel="noopener noreferrer">unityroom</a>'
+            },
+            {
+                label: "使用アセット",
+                value: '<a href="https://www.cgtrader.com/free-3d-models/plant/other/earth-16k-f2b2ab91-665c-4409-beac-be0f8069af8d" target="_blank" rel="noopener noreferrer">Earth 16k</a><br>EARTHステージ、背景'
             }
         ],
         media: [
@@ -104,7 +108,7 @@ const games = [
         shortTitle: "無限バッティング",
         tagline: "打って飛ばして気持ちよく遊ぶバッティングゲーム",
         description: "ボールを打ち返す気持ちよさを前面に出した作品です。スコアを伸ばしながら繰り返し遊べるようにしています。",
-        cardDescription: "打って飛ばして気持ちよく遊ぶバッティングゲーム",
+        cardDescription: "スコアを伸ばしながら繰り返し遊べるバッティングゲーム",
         status: "公開中",
         genre: "Batting Action",
         platforms: ["unityroom"],
@@ -122,8 +126,12 @@ const games = [
         ],
         credits: [
             {
-                label: "公開ページ",
-                value: '<a href="https://unityroom.com/games/infinitebatting" target="_blank" rel="noopener noreferrer">unityroom</a>'
+                label: "音楽",
+                value: '<a href="http://notanomori.net/sound/2386/" target="_blank" rel="noopener noreferrer">野球のボールが飛ぶ音</a><br>Sound Effect by <a href="https://pixabay.com/ja/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=52818" target="_blank" rel="noopener noreferrer">freesound_community</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=52818" target="_blank" rel="noopener noreferrer">Pixabay</a><br><a href="https://pixabay.com/ja/sound-effects/search/%E9%87%8E%E7%90%83%E5%A0%B4/" target="_blank" rel="noopener noreferrer">Free 野球場 Sound Effects Download - Pixabay</a>'
+            },
+            {
+                label: "3D",
+                value: '"Baseball Helmet" (<a href="https://skfb.ly/DYSJ" target="_blank" rel="noopener noreferrer">https://skfb.ly/DYSJ</a>) by Microsoft is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.<br>"Baseball Cap" (<a href="https://skfb.ly/6sEqr" target="_blank" rel="noopener noreferrer">https://skfb.ly/6sEqr</a>) by Scott VanArsdale is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.<br>"BaseBall" (<a href="https://skfb.ly/6WXOE" target="_blank" rel="noopener noreferrer">https://skfb.ly/6WXOE</a>) by neutralize is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.<br>"Baseball Glove" (<a href="https://skfb.ly/6pDON" target="_blank" rel="noopener noreferrer">https://skfb.ly/6pDON</a>) by Andre Bond Sr. is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.<br>"glove_6-6-20_deci600k" (<a href="https://skfb.ly/6SZPS" target="_blank" rel="noopener noreferrer">https://skfb.ly/6SZPS</a>) by lamont-media is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.'
             }
         ],
         media: [
@@ -155,7 +163,9 @@ const games = [
         playUrl: "https://unityroom.com/games/6arapon",
         playLabel: "プレイ ▶",
         externalLinks: [
-            { label: "unityroom", url: "https://unityroom.com/games/6arapon" }
+            { label: "unityroom", url: "https://unityroom.com/games/6arapon" },
+            { label: "App Store", url: "https://apps.apple.com/jp/app/6arapon-%E3%82%AC%E3%83%A9%E3%83%9D%E3%83%B3%E5%8A%B9%E7%8E%87%E5%8C%96%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AB%E3%83%BC/id6754412698" },
+            { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.egg3dStudio.GARAPON" }
         ],
         features: [
             "回して集める行為の楽しさを素直に味わえます。",
@@ -164,8 +174,8 @@ const games = [
         ],
         credits: [
             {
-                label: "公開ページ",
-                value: '<a href="https://unityroom.com/games/6arapon" target="_blank" rel="noopener noreferrer">unityroom</a>'
+                label: "使用アセット",
+                value: '<a href="https://otologic.jp/free/se/lottery-drawing-bingo01.html" target="_blank" rel="noopener noreferrer">OtoLogic</a><br>BGM（木漏れ日の中で）、効果音（ガラポンを回す音など）を使用させていただきました<br>ありがとうございます'
             }
         ],
         media: [
@@ -206,8 +216,8 @@ const games = [
         ],
         credits: [
             {
-                label: "公開ページ",
-                value: '<a href="https://unityroom.com/games/bombtype" target="_blank" rel="noopener noreferrer">unityroom</a>'
+                label: "クレジット",
+                value: 'ありがとうございます<br><a href="https://soundeffect-lab.info/sound/battle/battle2.html" target="_blank" rel="noopener noreferrer">効果音ラボ - フリー、商用無料、報告不用の効果音素材をダウンロード</a><br>BGM: In That Mood<br>"Stone Elemental" (<a href="https://skfb.ly/6SJrZ" target="_blank" rel="noopener noreferrer">https://skfb.ly/6SJrZ</a>) by 3DWorkbench is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.<br>"Rocks Low Poly Starter Pack" (<a href="https://skfb.ly/6TuOH" target="_blank" rel="noopener noreferrer">https://skfb.ly/6TuOH</a>) by Dreyx is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.<br>"Torch" (<a href="https://skfb.ly/6AR9T" target="_blank" rel="noopener noreferrer">https://skfb.ly/6AR9T</a>) by DJMaesen is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.<br><a href="https://fonts.google.com/specimen/Rubik+Spray+Paint?preview.text=ABCDEFGHIJKLMN&categoryFilters=Feeling:%2FExpressive%2FPlayful" target="_blank" rel="noopener noreferrer">Rubik Spray Paint - Google Fonts</a><br><a href="https://fonts.google.com/noto/specimen/Noto+Sans+JP?preview.text=ABCDEFGHIJKLMN%E3%81%82&query=sans&lang=ja_Jpan" target="_blank" rel="noopener noreferrer">Noto Sans Japanese - Google Fonts</a><br>"lowpoly pig black" (<a href="https://skfb.ly/onUu6" target="_blank" rel="noopener noreferrer">https://skfb.ly/onUu6</a>) by fabiotambone is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.<br>"Stylized Chest" (<a href="https://skfb.ly/o99NY" target="_blank" rel="noopener noreferrer">https://skfb.ly/o99NY</a>) by Pasindu.Anjana is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.'
             }
         ],
         media: [
@@ -248,8 +258,12 @@ const games = [
         ],
         credits: [
             {
-                label: "公開ページ",
-                value: '<a href="https://unityroom.com/games/tone_compare" target="_blank" rel="noopener noreferrer">unityroom</a>'
+                label: "使用アセット",
+                value: '"Musical Note Symbols" by <a href="https://sketchfab.com/3d-models/musical-note-symbols-f5b9e3e74d874c11a3acc4fc64ddd5cf" target="_blank" rel="noopener noreferrer">SharpWind</a><br>音符3Dモデル'
+            },
+            {
+                label: "使用アセット",
+                value: '<a href="https://sketchfab.com/3d-models/macintosh-128k-896ea439b67b4606a23fb8b93be6af6d" target="_blank" rel="noopener noreferrer">Macintosh 128K by kreems</a><br>PC'
             }
         ],
         media: [
@@ -270,7 +284,7 @@ const games = [
         pageUrl: "canyougravity.html",
         title: "Can You 引力",
         shortTitle: "Can You 引力",
-        tagline: "引力エネルギー パズルアクション",
+        tagline: "引力エネルギーを使いこなすパズルアクション",
         description: "引力エネルギーを使いこなしゴールを目指すアクションパズルです。短いステージの中に考える楽しさを詰めています。",
         cardDescription: "引力を得て、そのエネルギーを消費してジャンプするゲーム",
         status: "公開中",
@@ -281,9 +295,7 @@ const games = [
         playUrl: "https://unityroom.com/games/canyougravity",
         playLabel: "プレイ ▶",
         externalLinks: [
-            { label: "unityroom", url: "https://unityroom.com/games/canyougravity" },
-            { label: "配信アーカイブ", url: "https://youtu.be/N3fGJzKKztI?t=1054" }
-        ],
+            { label: "unityroom", url: "https://unityroom.com/games/canyougravity" }],
         features: [
             "引力を軸にした明快なルールです。",
             "短いステージで試行錯誤しやすくしています。",
@@ -291,8 +303,8 @@ const games = [
         ],
         credits: [
             {
-                label: "公開ページ",
-                value: '<a href="https://unityroom.com/games/canyougravity" target="_blank" rel="noopener noreferrer">unityroom</a>'
+                label: "使用アセット",
+                value: 'BGM、ロゴは <a href="https://x.com/akamonsuta" target="_blank" rel="noopener noreferrer">赤モンスターさん</a> に作っていただきました。'
             }
         ],
         media: [
@@ -305,7 +317,7 @@ const games = [
         ],
         video: {
             title: "プレイ動画",
-            url: "https://video.twimg.com/amplify_video/1954496740855595008/vid/avc1/1060x586/tw9YyoRUBsnbNiRK.mp4?tag=14"
+            url: "https://youtu.be/ZCZVIMjMHKI"
 
         }
     },
@@ -334,8 +346,12 @@ const games = [
         ],
         credits: [
             {
-                label: "公開ページ",
-                value: '<a href="https://unityroom.com/games/onemorepiece" target="_blank" rel="noopener noreferrer">unityroom</a>'
+                label: "BGM",
+                value: '<a href="https://dova-s.jp/bgm/detail/21617" target="_blank" rel="noopener noreferrer">Southerly Wind written by MFP【Marron Fields Production】</a>'
+            },
+            {
+                label: "効果音",
+                value: '<a href="https://soundeffect-lab.info/sound/various/" target="_blank" rel="noopener noreferrer">水滴1</a>'
             }
         ],
         media: [
@@ -375,12 +391,7 @@ const games = [
             "無敵やスキルのパワーアップを拾って切り抜ける構成です。",
             "ニアミスでスコアを伸ばす、攻めた回避を誘う設計です。"
         ],
-        credits: [
-            {
-                label: "掲載ページ",
-                value: '<a href="https://www.roblox.com/games/70411997326136/" target="_blank" rel="noopener noreferrer">Roblox</a>'
-            }
-        ],
+        credits: [],
         media: [
             {
                 type: "image",
@@ -420,8 +431,8 @@ const games = [
         ],
         credits: [
             {
-                label: "掲載ページ",
-                value: '<a href="https://www.roblox.com/games/135339943321106/" target="_blank" rel="noopener noreferrer">Roblox</a>'
+                label: "使用アセット",
+                value: '"Gumball Machine (Free Download)" (<a href="https://skfb.ly/6tLGv" target="_blank" rel="noopener noreferrer">https://skfb.ly/6tLGv</a>) by pizzaguyty is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution</a>.'
             }
         ],
         media: [
@@ -525,8 +536,6 @@ const createMediaMarkup = (item, index, isActive) => {
                 <div class="media-visual media-visual-video">
                     ${createVideoEmbedMarkup(item, item.alt)}
                 </div>
-                <span class="media-slide-chip"><i class="fa-solid fa-play" aria-hidden="true"></i> Video</span>
-                <figcaption>${escapeHtml(item.caption)}</figcaption>
             </figure>
         `;
     }
@@ -536,7 +545,6 @@ const createMediaMarkup = (item, index, isActive) => {
             <div class="media-visual"${getMediaVisualStyle(item)}>
                 <img src="${item.src}" alt="${escapeHtml(item.alt)}" loading="lazy">
             </div>
-            <figcaption>${escapeHtml(item.caption)}</figcaption>
         </figure>
     `;
 };
@@ -751,11 +759,6 @@ const renderGameDetail = () => {
             <div class="game-media-panel">
                 <div class="media-stage">
                     ${mediaItems.map((item, index) => createMediaMarkup(item, index, index === 0)).join("")}
-                    <div class="media-progress" aria-hidden="true">
-                        <span data-media-current>01</span>
-                        <span>/</span>
-                        <span>${String(mediaItems.length).padStart(2, "0")}</span>
-                    </div>
                     <button class="media-nav prev" type="button" data-media-action="prev" aria-label="前の画像">
                         <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                     </button>
@@ -768,7 +771,6 @@ const renderGameDetail = () => {
                 <p class="eyebrow">${escapeHtml(game.genre)}</p>
                 <h1>${escapeHtml(game.title)}</h1>
                 <p class="game-summary-tagline">${escapeHtml(game.tagline)}</p>
-                <p class="game-summary-description">${escapeHtml(game.description)}</p>
                 <div class="hero-actions">
                     <a class="button button-primary" href="${getPrimaryPlayUrl(game)}" target="_blank" rel="noopener noreferrer">${escapeHtml(game.playLabel)}</a>
                 </div>
@@ -842,17 +844,19 @@ const renderGameDetail = () => {
                         `).join("")}
                     </div>
                 </div>
-                <div class="link-group">
-                    <h3>クレジット</h3>
-                    <div class="credit-list">
-                        ${game.credits.map((credit) => `
-                            <div class="credit-row">
-                                <span class="credit-label">${escapeHtml(credit.label)}</span>
-                                <span class="credit-value">${credit.value}</span>
-                            </div>
-                        `).join("")}
+                ${game.credits.length ? `
+                    <div class="link-group">
+                        <h3>クレジット</h3>
+                        <div class="credit-list">
+                            ${game.credits.map((credit) => `
+                                <div class="credit-row">
+                                    <span class="credit-label">${escapeHtml(credit.label)}</span>
+                                    <span class="credit-value">${credit.value}</span>
+                                </div>
+                            `).join("")}
+                        </div>
                     </div>
-                </div>
+                ` : ""}
             </div>
         </section>
     `;
@@ -921,7 +925,6 @@ const setupMediaGallery = (root) => {
     const slides = Array.from(root.querySelectorAll("[data-media-slide]"));
     const prevButton = root.querySelector('[data-media-action="prev"]');
     const nextButton = root.querySelector('[data-media-action="next"]');
-    const currentCounter = root.querySelector("[data-media-current]");
 
     if (!slides.length) {
         return;
@@ -984,10 +987,6 @@ const setupMediaGallery = (root) => {
         slides.forEach((slide, index) => {
             slide.classList.toggle("is-active", index === activeIndex);
         });
-
-        if (currentCounter) {
-            currentCounter.textContent = String(activeIndex + 1).padStart(2, "0");
-        }
 
         handleActiveVideo();
     };
