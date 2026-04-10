@@ -383,8 +383,7 @@ const games = [
         playUrl: "https://www.roblox.com/games/70411997326136/",
         playLabel: "プレイ ▶",
         externalLinks: [
-            { label: "Roblox", url: "https://www.roblox.com/games/70411997326136/" },
-            { label: "Creations", url: "https://www.roblox.com/ja/users/10142301930/profile#!/creations" }
+            { label: "Roblox", url: "https://www.roblox.com/games/70411997326136/" }
         ],
         features: [
             "時間経過で速度と密度が増していく、反射神経重視の回避アクションです。",
@@ -421,8 +420,7 @@ const games = [
         playUrl: "https://www.roblox.com/games/135339943321106/",
         playLabel: "プレイ ▶",
         externalLinks: [
-            { label: "Roblox", url: "https://www.roblox.com/games/135339943321106/" },
-            { label: "Creations", url: "https://www.roblox.com/ja/users/10142301930/profile#!/creations" }
+            { label: "Roblox", url: "https://www.roblox.com/games/135339943321106/" }
         ],
         features: [
             "マシン強化と収集を繰り返して規模を広げるタイクーン作品です。",
