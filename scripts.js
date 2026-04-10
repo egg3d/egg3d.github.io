@@ -759,12 +759,8 @@ const renderGameDetail = () => {
             <div class="game-media-panel">
                 <div class="media-stage">
                     ${mediaItems.map((item, index) => createMediaMarkup(item, index, index === 0)).join("")}
-                    <button class="media-nav prev" type="button" data-media-action="prev" aria-label="前の画像">
-                        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                    </button>
-                    <button class="media-nav next" type="button" data-media-action="next" aria-label="次の画像">
-                        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                    </button>
+                    <button class="media-nav prev" type="button" data-media-action="prev" aria-label="前の画像"></button>
+                    <button class="media-nav next" type="button" data-media-action="next" aria-label="次の画像"></button>
                 </div>
             </div>
             <aside class="game-summary-panel">
