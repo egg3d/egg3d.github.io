@@ -6,24 +6,25 @@ const games = [
         shortTitle: "BOUND",
         tagline: "タイミング良く跳んで進むジャンプアクション",
         description: "地面の動きとジャンプの気持ちよさに集中して作ったアクションゲームです。短いプレイでもテンポ良く遊べるように調整しています。",
-        cardDescription: "リズム感のあるジャンプで進む作品です。",
+        cardDescription: "タイミング良くクリックするリズムアクション",
         status: "公開中",
         genre: "Action",
         platforms: ["itch.io", "App Store", "Google Play", "unityroom"],
         engine: "Unity",
-        release: "2025年1月",
+        release: "2025年5月",
         playUrl: "https://egg-3d.itch.io/bound",
-        playLabel: "プレイページへ",
+        playLabel: "プレイ ▶",
         externalLinks: [
+            { label: "unityroom", url: "https://unityroom.com/games/bound_egg" },
             { label: "itch.io", url: "https://egg-3d.itch.io/bound" },
+            { label: "PLiCy", url: "https://plicy.net/GamePlay/207296" },
             { label: "App Store", url: "https://apps.apple.com/us/app/bound-timing-jump-action/id6753901555?itscg=30200&itsct=apps_box_badge&mttnsubad=6753901555" },
-            { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.egg3d.bound" },
-            { label: "unityroom", url: "https://unityroom.com/games/bound_egg" }
+            { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.egg3d.bound" }
         ],
         features: [
             "ジャンプの手触りとテンポ感を中心に設計しています。",
             "短時間でも繰り返し挑戦したくなるバランスを意識しています。",
-            "複数の配信先で遊べるように展開しています。"
+            "1入力で深い駆け引きが生まれるようにしています。"
         ],
         credits: [
             {
@@ -47,7 +48,7 @@ const games = [
         ],
         video: {
             title: "BOUND プレイ動画",
-            youtubeUrl: "https://youtube.com/shorts/-gTMPMWtRuk"
+            url: "https://youtube.com/shorts/-gTMPMWtRuk"
         }
     },
     {
@@ -57,23 +58,25 @@ const games = [
         shortTitle: "FallWords",
         tagline: "落ちてくる単語を打つタイピングアクション",
         description: "落下してくるワードを素早くタイプして処理していくタイピングゲームです。視認性と気持ちのいい入力体験を重視しています。",
-        cardDescription: "単語を打ってさばくタイピングゲームです。",
+        cardDescription: "落ちてくる単語を打つ自由度の高いタイピングアクション",
         status: "公開中",
         genre: "Typing Action",
         platforms: ["itch.io", "unityroom"],
         engine: "Unity",
-        release: "2025年5月",
+        release: "2025年7月",
         playUrl: "https://egg-3d.itch.io/fallwords",
-        playLabel: "プレイページへ",
+        playLabel: "プレイ ▶",
         externalLinks: [
-            { label: "Latest", url: "https://egg-3d.itch.io/fallwords" },
-            { label: "ver.1.0", url: "https://egg-3d.itch.io/fallwords-1" },
-            { label: "unityroom", url: "https://unityroom.com/games/fallwords" }
+            { label: "unityroom", url: "https://unityroom.com/games/fallwords" },
+            { label: "itch.io", url: "https://egg-3d.itch.io/fallwords" },
+            { label: "PLiCy", url: "https://plicy.net/GamePlay/207294" },
+            { label: "App Store", url: "https://apps.apple.com/us/app/fallwords-%E9%A2%A8%E8%88%B9%E7%A0%B4%E8%A3%82%E3%82%BF%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0/id6753872271" },
+            { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.egg3d.FallWords" }
         ],
         features: [
             "単語の認識と入力をテンポ良く切り替える構成です。",
             "プレイ感を見ながら表示や難度を調整しています。",
-            "配信先ごとのバージョン差も追いやすく整理しています。"
+            "どの文字からでも打てる自由度を実現しています。"
         ],
         credits: [
             {
@@ -85,19 +88,13 @@ const games = [
             {
                 type: "image",
                 src: "Images/Games/FallWords.gif",
-                alt: "FallWords のプレイ画面",
-                caption: "プレイ中の様子"
-            },
-            {
-                type: "image",
-                src: "Images/Games/FallWords.gif",
                 alt: "FallWords のゲーム画面",
-                caption: "ゲーム画面"
+                caption: "アイコン画像"
             }
         ],
         video: {
             title: "FallWords プレイ動画",
-            youtubeUrl: "https://youtu.be/zggfj0j06w4"
+            url: "https://youtu.be/zggfj0j06w4"
         }
     },
     {
@@ -107,14 +104,14 @@ const games = [
         shortTitle: "無限バッティング",
         tagline: "打って飛ばして気持ちよく遊ぶバッティングゲーム",
         description: "ボールを打ち返す気持ちよさを前面に出した作品です。スコアを伸ばしながら繰り返し遊べるようにしています。",
-        cardDescription: "爽快感重視のバッティングゲームです。",
+        cardDescription: "打って飛ばして気持ちよく遊ぶバッティングゲーム",
         status: "公開中",
         genre: "Batting Action",
         platforms: ["unityroom"],
         engine: "Unity",
-        release: "2025年9月",
+        release: "2025年11月",
         playUrl: "https://unityroom.com/games/infinitebatting",
-        playLabel: "unityroomで遊ぶ",
+        playLabel: "プレイ ▶",
         externalLinks: [
             { label: "unityroom", url: "https://unityroom.com/games/infinitebatting" }
         ],
@@ -139,7 +136,7 @@ const games = [
         ],
         video: {
             title: "無限バッティング プレイ動画",
-            youtubeUrl: "https://youtu.be/2WwUUUuVbmM"
+            url: "https://youtu.be/2WwUUUuVbmM"
         }
     },
     {
@@ -149,14 +146,14 @@ const games = [
         shortTitle: "6ARAPON",
         tagline: "回して集めるガラポン収集ゲーム",
         description: "ガラポンを回してアイテムを集めていくゲームです。少しずつ進めたくなる収集感を大切にしています。",
-        cardDescription: "収集欲を刺激するガラポンゲームです。",
+        cardDescription: "回して集めるガラポン効率化収集ゲーム",
         status: "公開中",
         genre: "Idle / Collection",
         platforms: ["unityroom"],
         engine: "Unity",
-        release: "2025年9月",
+        release: "2025年10月",
         playUrl: "https://unityroom.com/games/6arapon",
-        playLabel: "unityroomで遊ぶ",
+        playLabel: "プレイ ▶",
         externalLinks: [
             { label: "unityroom", url: "https://unityroom.com/games/6arapon" }
         ],
@@ -181,7 +178,7 @@ const games = [
         ],
         video: {
             title: "6ARAPON プレイ動画",
-            youtubeUrl: "https://youtube.com/shorts/Vf7Pq84lHQo"
+            url: "https://youtube.com/shorts/Vf7Pq84lHQo"
         }
     },
     {
@@ -198,7 +195,7 @@ const games = [
         engine: "Unity",
         release: "2025年12月",
         playUrl: "https://unityroom.com/games/bombtype",
-        playLabel: "unityroomで遊ぶ",
+        playLabel: "プレイ ▶",
         externalLinks: [
             { label: "unityroom", url: "https://unityroom.com/games/bombtype" }
         ],
@@ -223,7 +220,7 @@ const games = [
         ],
         video: {
             title: "つなげるパズルタイピング - BombType",
-            youtubeUrl: "https://youtu.be/W4cl-E779Ew"
+            url: "https://youtu.be/W4cl-E779Ew"
         }
     },
     {
@@ -240,7 +237,7 @@ const games = [
         engine: "Unity",
         release: "2025年11月",
         playUrl: "https://unityroom.com/games/tone_compare",
-        playLabel: "unityroomで遊ぶ",
+        playLabel: "プレイ ▶",
         externalLinks: [
             { label: "unityroom", url: "https://unityroom.com/games/tone_compare" }
         ],
@@ -265,7 +262,7 @@ const games = [
         ],
         video: {
             title: "音くらべ プレイ動画",
-            youtubeUrl: "https://youtube.com/shorts/RCgnANDR-Fo"
+            url: "https://youtube.com/shorts/RCgnANDR-Fo"
         }
     },
     {
@@ -273,24 +270,24 @@ const games = [
         pageUrl: "canyougravity.html",
         title: "Can You 引力",
         shortTitle: "Can You 引力",
-        tagline: "重力を切り替えて進むパズルアクション",
-        description: "重力方向を使い分けながらゴールを目指すアクションパズルです。短いステージの中に考える楽しさを詰めています。",
-        cardDescription: "引力を使い分けるアクションパズルです。",
+        tagline: "引力エネルギー パズルアクション",
+        description: "引力エネルギーを使いこなしゴールを目指すアクションパズルです。短いステージの中に考える楽しさを詰めています。",
+        cardDescription: "引力を得て、そのエネルギーを消費してジャンプするゲーム",
         status: "公開中",
         genre: "Puzzle Action",
         platforms: ["unityroom"],
         engine: "Unity",
         release: "2025年8月",
         playUrl: "https://unityroom.com/games/canyougravity",
-        playLabel: "unityroomで遊ぶ",
+        playLabel: "プレイ ▶",
         externalLinks: [
             { label: "unityroom", url: "https://unityroom.com/games/canyougravity" },
             { label: "配信アーカイブ", url: "https://youtu.be/N3fGJzKKztI?t=1054" }
         ],
         features: [
-            "重力の切り替えを軸にした明快なルールです。",
+            "引力を軸にした明快なルールです。",
             "短いステージで試行錯誤しやすくしています。",
-            "unity1week向けにまとめた作品です。"
+            "unity1week（お題：ひく）参加作品です。"
         ],
         credits: [
             {
@@ -305,23 +302,28 @@ const games = [
                 alt: "Can You 引力 のサムネイル",
                 caption: "unityroom 掲載画像"
             }
-        ]
+        ],
+        video: {
+            title: "プレイ動画",
+            url: "https://video.twimg.com/amplify_video/1954496740855595008/vid/avc1/1060x586/tw9YyoRUBsnbNiRK.mp4?tag=14"
+
+        }
     },
     {
         slug: "one-more-piece",
         pageUrl: "one-more-piece.html",
         title: "もうひとつむつむ",
         shortTitle: "もうひとつむつむ",
-        tagline: "積んで崩して遊ぶ物理バトル",
+        tagline: "積んで高さを競う物理ゲーム",
         description: "オブジェクトを積み上げながら駆け引きを楽しむ対戦寄りの作品です。物理挙動の意外性も含めて遊びにしています。",
-        cardDescription: "物理の崩れ方も面白さになる作品です。",
+        cardDescription: "積んでつなげて遊ぶ物理ゲーム",
         status: "公開中",
         genre: "Physics Battle",
         platforms: ["unityroom"],
         engine: "Unity",
         release: "2025年12月",
         playUrl: "https://unityroom.com/games/onemorepiece",
-        playLabel: "unityroomで遊ぶ",
+        playLabel: "プレイ ▶",
         externalLinks: [
             { label: "unityroom", url: "https://unityroom.com/games/onemorepiece" }
         ],
@@ -346,7 +348,7 @@ const games = [
         ],
         video: {
             title: "グラグラタワーバトル - もうひとつむつむ",
-            youtubeUrl: "https://youtube.com/shorts/pzKQW1R4yvA?feature=share"
+            url: "https://youtube.com/shorts/pzKQW1R4yvA?feature=share"
         }
     },
     {
@@ -358,12 +360,12 @@ const games = [
         description: "次々と迫る障害物をスレスレで避けながらハイスコアを狙う Roblox 作品です。時間経過で難度が上がるスピード感に、パワーアップとニアミスボーナスを組み合わせた回避アクションになっています。",
         cardDescription: "Roblox で公開しているボクセル回避アクションです。",
         status: "公開中",
-        genre: "Roblox Action",
+        genre: "Action",
         platforms: ["Roblox"],
         engine: "Roblox Studio",
-        release: "2026年2月",
+        release: "2026年3月",
         playUrl: "https://www.roblox.com/games/70411997326136/",
-        playLabel: "Roblox で遊ぶ",
+        playLabel: "プレイ ▶",
         externalLinks: [
             { label: "Roblox", url: "https://www.roblox.com/games/70411997326136/" },
             { label: "Creations", url: "https://www.roblox.com/ja/users/10142301930/profile#!/creations" }
@@ -386,23 +388,27 @@ const games = [
                 alt: "ボクセル・ドッジ のサムネイル",
                 caption: "Roblox 掲載画像"
             }
-        ]
+        ],
+        video: {
+            title: "ボクセル・ドッジ プレイ動画",
+            url: "https://youtu.be/bz0o6NbNMKs"
+        }
     },
     {
         slug: "gumball-rush-tycoon",
         pageUrl: "gumball-rush-tycoon.html",
         title: "Gumball Rush Tycoon",
         shortTitle: "Gumball Rush",
-        tagline: "回して集めて強化する Roblox 製キャンディタイクーン",
+        tagline: "回して集めて強化するタイクーン",
         description: "マシンを強化しながらガムボールを量産し、より大きなキャンディ帝国を目指す Roblox 作品です。BOOST や FEVER、実績報酬やランキングを組み合わせた成長型のタイクーンにしています。",
-        cardDescription: "Roblox で公開している強化型タイクーンです。",
+        cardDescription: "回して集めて強化するタイクーンです。",
         status: "公開中",
-        genre: "Roblox Tycoon",
+        genre: "Tycoon",
         platforms: ["Roblox"],
         engine: "Roblox Studio",
-        release: "2025年12月",
+        release: "2026年4月",
         playUrl: "https://www.roblox.com/games/135339943321106/",
-        playLabel: "Roblox で遊ぶ",
+        playLabel: "プレイ ▶",
         externalLinks: [
             { label: "Roblox", url: "https://www.roblox.com/games/135339943321106/" },
             { label: "Creations", url: "https://www.roblox.com/ja/users/10142301930/profile#!/creations" }
@@ -425,7 +431,11 @@ const games = [
                 alt: "Gumball Rush Tycoon のサムネイル",
                 caption: "Roblox 掲載画像"
             }
-        ]
+        ],
+        video: {
+            title: "Gumball Rush Tycoon プレイ動画",
+            url: "https://youtu.be/3G_C4K7geg0"
+        }
     }
 ];
 
@@ -444,42 +454,24 @@ const escapeHtml = (value) =>
 const createPlatformBadges = (platforms) =>
     platforms.map((platform) => `<span class="pill">${escapeHtml(platform)}</span>`).join("");
 
-const officialBrandAssets = {
-    appStoreBadge: {
-        src: "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg",
-        alt: "Download on the App Store"
-    },
-    googlePlayBadge: {
-        src: "Images/Brand/google-play-badge.png",
-        alt: "Get it on Google Play"
-    },
-    itchIoBadge: {
-        src: "Images/Brand/itchio-badge.svg",
-        alt: "Available on itch.io"
+const getPrimaryPlayUrl = (game) => {
+    const links = Array.isArray(game.externalLinks) ? game.externalLinks : [];
+    const platforms = Array.isArray(game.platforms) ? game.platforms : [];
+
+    if (platforms.some((platform) => String(platform).toLowerCase() === "roblox")) {
+        return links.find((link) => /roblox/i.test(link.label))?.url || game.playUrl;
     }
+
+    return links.find((link) => /unityroom/i.test(link.label))?.url || game.playUrl;
 };
 
-const createExternalLinkCard = (link) => {
-    const normalizedLabel = link.label.trim().toLowerCase();
-    const isAppStore = normalizedLabel === "app store";
-    const isGooglePlay = normalizedLabel === "google play";
-    const isItchIo = normalizedLabel === "itch.io";
-    const badgeAsset = isAppStore
-        ? officialBrandAssets.appStoreBadge
-        : isGooglePlay
-            ? officialBrandAssets.googlePlayBadge
-            : isItchIo
-                ? officialBrandAssets.itchIoBadge
-                : null;
+const parseReleaseDateValue = (release) => {
+    const match = String(release).match(/(\d{4})年(\d{1,2})月/);
+    if (!match) {
+        return 0;
+    }
 
-    return `
-        <a class="external-link-card${badgeAsset ? " is-store-badge" : ""}" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(link.label)}">
-            ${badgeAsset
-                ? `<img class="store-badge-image" src="${badgeAsset.src}" alt="${badgeAsset.alt}" loading="lazy" decoding="async">`
-                : `<span>${escapeHtml(link.label)}</span>`}
-            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-        </a>
-    `;
+    return Number(match[1]) * 100 + Number(match[2]);
 };
 
 const createGameCard = (game) => `
@@ -490,17 +482,16 @@ const createGameCard = (game) => `
         <div class="game-card-body">
             <div class="game-card-topline">
                 <span class="game-card-title">${escapeHtml(game.title)}</span>
-                <span class="game-card-status">${escapeHtml(game.status)}</span>
             </div>
             <p class="game-card-tagline">${escapeHtml(game.tagline)}</p>
-            <p class="game-card-description">${escapeHtml(game.cardDescription)}</p>
-            <p class="game-card-release">公開年月: ${escapeHtml(game.release)}</p>
+            <p class="game-card-release">公開: ${escapeHtml(game.release)}</p>
         </div>
     </a>
 `;
 
 const renderHomePage = () => {
     const shelves = document.getElementById("game-shelves");
+    const sortedGames = [...games].sort((left, right) => parseReleaseDateValue(right.release) - parseReleaseDateValue(left.release));
 
     if (!shelves) {
         return;
@@ -512,28 +503,29 @@ const renderHomePage = () => {
                 <div>
                     <p class="section-kicker">All Works</p>
                     <h2>作品一覧</h2>
-                    <p class="section-description">公開中のゲームを一覧で見られます。</p>
+                    <p class="section-description"></p>
                 </div>
             </div>
             <div class="game-grid">
-                ${games.map((game) => createGameCard(game)).join("")}
+                ${sortedGames.map((game) => createGameCard(game)).join("")}
             </div>
         </section>
     `;
 };
 
+const getMediaVisualStyle = (item) =>
+    item.position
+        ? ` style="--media-object-position:${escapeHtml(item.position)};"`
+        : "";
+
 const createMediaMarkup = (item, index, isActive) => {
     if (item.type === "video") {
         return `
-            <figure class="media-slide media-slide-video ${isActive ? "is-active" : ""}" data-media-slide data-media-type="video" data-media-index="${index}">
-                <iframe
-                    class="media-video-frame"
-                    src="${item.embedUrl}"
-                    title="${escapeHtml(item.alt)}"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
+            <figure class="media-slide media-slide-video ${isActive ? "is-active" : ""}" data-media-slide data-media-type="video" data-media-platform="${escapeHtml(item.platform || "")}" data-media-index="${index}">
+                <div class="media-visual media-visual-video">
+                    ${createVideoEmbedMarkup(item, item.alt)}
+                </div>
+                <span class="media-slide-chip"><i class="fa-solid fa-play" aria-hidden="true"></i> Video</span>
                 <figcaption>${escapeHtml(item.caption)}</figcaption>
             </figure>
         `;
@@ -541,18 +533,53 @@ const createMediaMarkup = (item, index, isActive) => {
 
     return `
         <figure class="media-slide ${isActive ? "is-active" : ""}" data-media-slide data-media-type="image" data-media-index="${index}">
-            <img src="${item.src}" alt="${escapeHtml(item.alt)}" loading="lazy">
+            <div class="media-visual"${getMediaVisualStyle(item)}>
+                <img src="${item.src}" alt="${escapeHtml(item.alt)}" loading="lazy">
+            </div>
             <figcaption>${escapeHtml(item.caption)}</figcaption>
         </figure>
     `;
 };
 
-const createThumbMarkup = (item, index, isActive) => `
-    <button class="media-thumb ${isActive ? "is-active" : ""}" type="button" data-media-thumb="${index}" aria-label="${escapeHtml(item.caption)} を表示">
-        <img src="${item.thumbSrc || item.src}" alt="${escapeHtml(item.alt)}" loading="lazy">
-        ${item.type === "video" ? '<span class="media-thumb-badge"><i class="fa-solid fa-play" aria-hidden="true"></i> Video</span>' : ""}
-    </button>
-`;
+const getVideoSource = (url) => {
+    if (!url) {
+        return { platform: "", id: "", url: "" };
+    }
+
+    try {
+        const parsed = new URL(url);
+        const host = parsed.hostname.replace(/^www\./, "");
+
+        if (host === "youtu.be" || host === "youtube.com" || host === "m.youtube.com") {
+            return {
+                platform: "youtube",
+                id: getYouTubeVideoId(url),
+                url
+            };
+        }
+
+        if ((host === "x.com" || host === "twitter.com") && parsed.pathname.includes("/status/")) {
+            const match = parsed.pathname.match(/status\/(\d+)/);
+            return {
+                platform: "x",
+                id: match?.[1] || "",
+                url
+            };
+        }
+
+        if (host === "video.twimg.com" || parsed.pathname.toLowerCase().endsWith(".mp4")) {
+            return {
+                platform: "file",
+                id: parsed.pathname,
+                url
+            };
+        }
+    } catch {
+        return { platform: "", id: "", url: "" };
+    }
+
+    return { platform: "", id: "", url: "" };
+};
 
 const getYouTubeVideoId = (url) => {
     if (!url) {
@@ -580,8 +607,8 @@ const getYouTubeVideoId = (url) => {
 };
 
 const createVideoSection = (game) => {
-    const embedUrl = getYouTubeEmbedUrl(game.video?.youtubeUrl);
-    if (!embedUrl) {
+    const videoItem = getVideoMediaItem(game);
+    if (!videoItem) {
         return "";
     }
 
@@ -594,14 +621,7 @@ const createVideoSection = (game) => {
                 </div>
             </div>
             <div class="video-frame-wrap">
-                <iframe
-                    class="video-frame"
-                    src="${embedUrl}"
-                    title="${escapeHtml(game.title)} の動画"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
+                ${createVideoEmbedMarkup(videoItem, `${game.title} の動画`, true)}
             </div>
         </section>
     `;
@@ -614,20 +634,90 @@ const getYouTubeEmbedUrl = (url) => {
         : "";
 };
 
-const getGameMediaItems = (game) => {
-    const items = [...game.media];
-    const videoId = getYouTubeVideoId(game.video?.youtubeUrl);
+const createVideoEmbedMarkup = (item, title, useVideoFrameClass = false) => {
+    const frameClass = useVideoFrameClass ? "video-frame" : "media-video-frame";
 
-    if (videoId) {
-        items.push({
+    if (item.platform === "x") {
+        return `
+            <blockquote class="twitter-tweet" data-media-max-width="100%">
+                <a class="${frameClass}" href="${escapeHtml(item.postUrl)}">${escapeHtml(title)}</a>
+            </blockquote>
+        `;
+    }
+
+    if (item.platform === "file") {
+        return `
+            <video
+                class="${frameClass}"
+                src="${item.videoUrl}"
+                title="${escapeHtml(title)}"
+                controls
+                playsinline
+                preload="metadata"
+                muted>
+            </video>
+        `;
+    }
+
+    return `
+        <iframe
+            class="${frameClass}"
+            src="${item.embedUrl}"
+            title="${escapeHtml(title)}"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    `;
+};
+
+const getVideoMediaItem = (game) => {
+    const source = getVideoSource(game.video?.url);
+
+    if (source.platform === "youtube" && source.id) {
+        return {
             type: "video",
-            src: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
-            thumbSrc: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
-            embedUrl: getYouTubeEmbedUrl(game.video.youtubeUrl),
+            platform: "youtube",
+            src: `https://img.youtube.com/vi/${source.id}/hqdefault.jpg`,
+            thumbSrc: `https://img.youtube.com/vi/${source.id}/hqdefault.jpg`,
+            embedUrl: getYouTubeEmbedUrl(source.url),
             alt: `${game.title} のプレイ動画`,
             caption: game.video?.title || "プレイ動画",
-            videoId
-        });
+            videoId: source.id
+        };
+    }
+
+    if (source.platform === "x" && source.id) {
+        return {
+            type: "video",
+            platform: "x",
+            postUrl: source.url,
+            alt: `${game.title} のXポスト`,
+            caption: game.video?.title || "X Post",
+            videoId: source.id
+        };
+    }
+
+    if (source.platform === "file" && source.url) {
+        return {
+            type: "video",
+            platform: "file",
+            videoUrl: source.url,
+            alt: `${game.title} のプレイ動画`,
+            caption: game.video?.title || "プレイ動画",
+            videoId: source.id
+        };
+    }
+
+    return null;
+};
+
+const getGameMediaItems = (game) => {
+    const items = [...game.media];
+    const videoItem = getVideoMediaItem(game);
+
+    if (videoItem) {
+        items.unshift(videoItem);
     }
 
     return items;
@@ -661,6 +751,11 @@ const renderGameDetail = () => {
             <div class="game-media-panel">
                 <div class="media-stage">
                     ${mediaItems.map((item, index) => createMediaMarkup(item, index, index === 0)).join("")}
+                    <div class="media-progress" aria-hidden="true">
+                        <span data-media-current>01</span>
+                        <span>/</span>
+                        <span>${String(mediaItems.length).padStart(2, "0")}</span>
+                    </div>
                     <button class="media-nav prev" type="button" data-media-action="prev" aria-label="前の画像">
                         <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
                     </button>
@@ -668,42 +763,17 @@ const renderGameDetail = () => {
                         <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
                     </button>
                 </div>
-                <div class="media-thumbs">
-                    ${mediaItems.map((item, index) => createThumbMarkup(item, index, index === 0)).join("")}
-                </div>
             </div>
             <aside class="game-summary-panel">
                 <p class="eyebrow">${escapeHtml(game.genre)}</p>
                 <h1>${escapeHtml(game.title)}</h1>
                 <p class="game-summary-tagline">${escapeHtml(game.tagline)}</p>
                 <p class="game-summary-description">${escapeHtml(game.description)}</p>
-                <div class="summary-meta">
-                    <div class="summary-meta-item">
-                        <span class="summary-meta-label">公開状況</span>
-                        <span class="summary-meta-value">${escapeHtml(game.status)}</span>
-                    </div>
-                    <div class="summary-meta-item">
-                        <span class="summary-meta-label">エンジン</span>
-                        <span class="summary-meta-value">${escapeHtml(game.engine)}</span>
-                    </div>
-                    <div class="summary-meta-item">
-                        <span class="summary-meta-label">公開先</span>
-                        <span class="summary-meta-value">${escapeHtml(game.platforms.join(" / "))}</span>
-                    </div>
-                </div>
                 <div class="hero-actions">
-                    <a class="button button-primary" href="${game.playUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(game.playLabel)}</a>
-                    <a class="button button-secondary" href="#game-details">詳しく見る</a>
+                    <a class="button button-primary" href="${getPrimaryPlayUrl(game)}" target="_blank" rel="noopener noreferrer">${escapeHtml(game.playLabel)}</a>
                 </div>
             </aside>
         </section>
-
-        <nav class="anchor-tabs" aria-label="ページ内ナビゲーション">
-            <a href="#game-details">概要</a>
-            
-            <a href="#game-features">見どころ</a>
-            <a href="#game-links">リンク</a>
-        </nav>
 
         <section id="game-details" class="content-section">
             <div class="section-heading">
@@ -765,7 +835,11 @@ const renderGameDetail = () => {
                 <div class="link-group">
                     <h3>プレイ先</h3>
                     <div class="external-link-list">
-                        ${game.externalLinks.map((link) => createExternalLinkCard(link)).join("")}
+                        ${game.externalLinks.map((link) => `
+                            <a class="external-link-card" href="${link.url}" target="_blank" rel="noopener noreferrer">
+                                <span>${escapeHtml(link.label)}</span>
+                            </a>
+                        `).join("")}
                     </div>
                 </div>
                 <div class="link-group">
@@ -787,6 +861,7 @@ const renderGameDetail = () => {
 };
 
 let youtubeApiPromise;
+let xWidgetsPromise;
 
 const loadYouTubeIframeApi = () => {
     if (youtubeApiPromise) {
@@ -815,13 +890,40 @@ const loadYouTubeIframeApi = () => {
     return youtubeApiPromise;
 };
 
+const loadXWidgets = () => {
+    if (xWidgetsPromise) {
+        return xWidgetsPromise;
+    }
+
+    xWidgetsPromise = new Promise((resolve) => {
+        if (window.twttr?.widgets) {
+            resolve(window.twttr);
+            return;
+        }
+
+        const existingScript = document.querySelector('script[src="https://platform.twitter.com/widgets.js"]');
+        if (existingScript) {
+            existingScript.addEventListener("load", () => resolve(window.twttr), { once: true });
+            return;
+        }
+
+        const script = document.createElement("script");
+        script.src = "https://platform.twitter.com/widgets.js";
+        script.async = true;
+        script.addEventListener("load", () => resolve(window.twttr), { once: true });
+        document.head.appendChild(script);
+    });
+
+    return xWidgetsPromise;
+};
+
 const setupMediaGallery = (root) => {
     const slides = Array.from(root.querySelectorAll("[data-media-slide]"));
-    const thumbs = Array.from(root.querySelectorAll("[data-media-thumb]"));
     const prevButton = root.querySelector('[data-media-action="prev"]');
     const nextButton = root.querySelector('[data-media-action="next"]');
+    const currentCounter = root.querySelector("[data-media-current]");
 
-    if (!slides.length || !thumbs.length) {
+    if (!slides.length) {
         return;
     }
 
@@ -843,6 +945,7 @@ const setupMediaGallery = (root) => {
         players.forEach((player, index) => {
             if (index !== activeIndex) {
                 player.pauseVideo?.();
+                player.pause?.();
             }
         });
     };
@@ -870,10 +973,9 @@ const setupMediaGallery = (root) => {
         stopInactiveVideos();
 
         const player = players.get(activeIndex);
-        if (player?.mute) {
-            player.mute();
-            player.playVideo?.();
-        }
+        player?.mute?.();
+        player?.playVideo?.();
+        player?.play?.();
     };
 
     const updateGallery = (nextIndex) => {
@@ -883,16 +985,12 @@ const setupMediaGallery = (root) => {
             slide.classList.toggle("is-active", index === activeIndex);
         });
 
-        thumbs.forEach((thumb, index) => {
-            thumb.classList.toggle("is-active", index === activeIndex);
-        });
+        if (currentCounter) {
+            currentCounter.textContent = String(activeIndex + 1).padStart(2, "0");
+        }
 
         handleActiveVideo();
     };
-
-    thumbs.forEach((thumb, index) => {
-        thumb.addEventListener("click", () => updateGallery(index));
-    });
 
     if (prevButton) {
         prevButton.addEventListener("click", () => updateGallery(activeIndex - 1));
@@ -903,10 +1001,51 @@ const setupMediaGallery = (root) => {
     }
 
     const videoSlides = slides.filter((slide) => slide.dataset.mediaType === "video");
+    const youtubeSlides = videoSlides.filter((slide) => slide.dataset.mediaPlatform === "youtube");
+    const xSlides = videoSlides.filter((slide) => slide.dataset.mediaPlatform === "x");
+    const fileSlides = videoSlides.filter((slide) => slide.dataset.mediaPlatform === "file");
 
-    if (videoSlides.length) {
+    fileSlides.forEach((slide) => {
+        const index = Number(slide.dataset.mediaIndex);
+        const video = slide.querySelector("video");
+        if (!video) {
+            return;
+        }
+
+        players.set(index, {
+            mute: () => {
+                video.muted = true;
+            },
+            play: () => {
+                video.play().catch(() => { });
+            },
+            pause: () => {
+                video.pause();
+                video.currentTime = 0;
+            }
+        });
+
+        video.addEventListener("play", () => {
+            if (index === activeIndex) {
+                clearAutoSlide();
+            }
+        });
+
+        video.addEventListener("ended", () => {
+            if (index === activeIndex) {
+                updateGallery(activeIndex + 1);
+            }
+        });
+    });
+
+    const initializeYouTubeSlides = () => {
+        if (!youtubeSlides.length) {
+            handleActiveVideo();
+            return;
+        }
+
         loadYouTubeIframeApi().then((YT) => {
-            videoSlides.forEach((slide) => {
+            youtubeSlides.forEach((slide) => {
                 const index = Number(slide.dataset.mediaIndex);
                 const frame = slide.querySelector("iframe");
                 if (!frame) {
@@ -933,7 +1072,6 @@ const setupMediaGallery = (root) => {
                             if (event.data === YT.PlayerState.PLAYING) {
                                 clearAutoSlide();
                             }
-
                         }
                     }
                 });
@@ -943,8 +1081,15 @@ const setupMediaGallery = (root) => {
 
             handleActiveVideo();
         });
+    };
+
+    if (xSlides.length) {
+        loadXWidgets().then((twttr) => {
+            twttr?.widgets?.load(root);
+            initializeYouTubeSlides();
+        });
     } else {
-        scheduleAutoSlide();
+        initializeYouTubeSlides();
     }
 };
 
