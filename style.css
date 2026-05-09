@@ -691,10 +691,12 @@ main.page-shell {
 }
 
 .media-stage {
-    --media-frame-side: 72px;
+    --media-frame-side: 0px;
+    --media-nav-gap: 12px;
+    --media-nav-size: 48px;
     --media-stage-top: 10px;
     --media-stage-gap: 14px;
-    --media-stage-bottom: 12px;
+    --media-stage-bottom: 72px;
     position: relative;
     width: min(100%, 860px);
     display: grid;
@@ -801,14 +803,14 @@ main.page-shell {
 
 .media-nav {
     position: absolute;
-    top: 50%;
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(-50%);
+    transform: none;
     z-index: 1;
-    width: 48px;
-    height: 48px;
+    width: var(--media-nav-size);
+    height: var(--media-nav-size);
     border: 0;
     border-radius: 50%;
     background: rgba(8, 16, 32, 0.7);
@@ -844,15 +846,15 @@ main.page-shell {
 
 .media-nav:hover {
     background: rgba(29, 78, 216, 0.82);
-    transform: translateY(-50%) scale(1.05);
+    transform: scale(1.05);
 }
 
 .media-nav.prev {
-    left: 8px;
+    left: calc(50% - var(--media-nav-size) - (var(--media-nav-gap) / 2));
 }
 
 .media-nav.next {
-    right: 8px;
+    left: calc(50% + (var(--media-nav-gap) / 2));
 }
 
 .video-frame-wrap {
@@ -1058,10 +1060,12 @@ main.page-shell {
     }
 
     .media-stage {
-        --media-frame-side: 44px;
+        --media-frame-side: 0px;
+        --media-nav-gap: 10px;
+        --media-nav-size: 44px;
         --media-stage-top: 8px;
         --media-stage-gap: 12px;
-        --media-stage-bottom: 10px;
+        --media-stage-bottom: 64px;
     }
 
 }

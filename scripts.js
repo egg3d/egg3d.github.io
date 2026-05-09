@@ -445,6 +445,43 @@ const games = [
             title: "Gumball Rush Tycoon プレイ動画",
             url: "https://youtu.be/3G_C4K7geg0"
         }
+    },
+    {
+        slug: "odd-reversi-stone-battle",
+        pageUrl: "odd-reversi-stone-battle.html",
+        title: "おかしなオセロ：ストーンバトル [PvP]",
+        shortTitle: "おかしなオセロ",
+        tagline: "ふつうのオセロとはちょっとちがう、ドキドキのストーンバトル",
+        description: "石をひっくり返して、ステージを自分の色でいっぱいにするRobloxのボードゲームです。ばくだん、シールド、タワー、サイコロなどのアビリティストーンを使って、自分だけのデッキで大逆転をねらえます。NPCとのバトル、デイリーチャレンジャー、宝箱、クエスト、ランキング、リアルタイムPvPまで楽しめます。",
+        cardDescription: "アビリティストーンで戦うRobloxの対戦ボードゲームです。",
+        status: "公開中",
+        genre: "Board Game",
+        platforms: ["Roblox"],
+        engine: "Roblox Studio",
+        release: "2026年5月",
+        playUrl: "https://www.roblox.com/ja/games/119363174550537/Odd-Reversi-Stone-Battle",
+        playLabel: "プレイ ▶",
+        externalLinks: [
+            { label: "Roblox", url: "https://www.roblox.com/ja/games/119363174550537/Odd-Reversi-Stone-Battle" }
+        ],
+        features: [
+            "石を置いて相手の石をはさみ、自分の色に変えてステージを広げていきます。",
+            "ばくだん、シールド、タワー、サイコロなどのアビリティストーンで、ふつうのオセロとは違う逆転の読み合いが生まれます。",
+            "リバーシ・ワールドのNPC、デイリーチャレンジャー、宝箱、クエスト、アチーブメント、ランキング、リアルタイムPvPに対応しています。"
+        ],
+        credits: [],
+        media: [
+            {
+                type: "image",
+                src: "Images/Games/OddReversi (2).png",
+                alt: "おかしなオセロ：ストーンバトル [PvP] のアイコン",
+                caption: "Roblox 掲載画像"
+            }
+        ],
+        video: {
+            title: "おかしなオセロ：ストーンバトル [PvP] プレイ動画",
+            url: "https://www.youtube.com/watch?v=utMJWXE7Bf4"
+        }
     }
 ];
 
@@ -475,6 +512,11 @@ const getPrimaryPlayUrl = (game) => {
 };
 
 const parseReleaseDateValue = (release) => {
+    const normalizedMatch = String(release).match(/(\d{4})年(\d{1,2})月/);
+    if (normalizedMatch) {
+        return Number(normalizedMatch[1]) * 100 + Number(normalizedMatch[2]);
+    }
+
     const match = String(release).match(/(\d{4})年(\d{1,2})月/);
     if (!match) {
         return 0;
