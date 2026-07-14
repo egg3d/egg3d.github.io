@@ -1,5 +1,83 @@
 const games = [
     {
+        slug: "shot-last-light-protocol",
+        pageUrl: "shot-last-light-protocol.html",
+        cardImage: "Images/Games/Cards/shot-last-light-protocol.webp",
+        title: "リコイル・サバイバー（制作中）",
+        shortTitle: "リコイル・サバイバー（制作中）",
+        tagline: "撃つたびに、戦場を滑る。反動だけで生き残れ。",
+        description: "Godot Engineで制作中の、ショットの反動だけで位置を変えながら迫り来る敵を迎え撃つ短時間リトライ型3Dアリーナシューティングです。狙いとチャージで一撃の威力と反動を調整し、敵の包囲を切り抜けましょう。パワーコアでオーバードライブを発動し、WAVE 5の突破を目指します。",
+        cardDescription: "反動で滑り、敵の群れを突破する3Dアリーナシューティング。",
+        status: "制作中",
+        genre: "3D Arena Shooter",
+        platforms: ["unityroom", "Google Play"],
+        engine: "Godot",
+        release: "2026年7月",
+        playUrl: "https://unityroom.com/games/recoil-survivor",
+        playLabel: "ゲームをプレイ",
+        externalLinks: [
+            { label: "unityroom", url: "https://unityroom.com/games/recoil-survivor" }
+        ],
+        features: [
+            "Godot Engineで制作中の3Dアリーナシューティング。",
+            "ショットの反動だけで移動する、狙いと位置取りが一体になったアクション。",
+            "ショットをチャージして威力と反動を調整し、敵の包囲を切り抜けます。",
+            "パワーコアの回収でオーバードライブを発動。連射性能を上げてWAVE 5を突破します。"
+        ],
+        credits: [
+            {
+                label: "UI Font",
+                value: '<a href="https://fonts.google.com/noto/specimen/Noto+Sans+JP" target="_blank" rel="noopener noreferrer">Noto Sans JP Variable</a> by Google Fonts — SIL Open Font License 1.1'
+            },
+            {
+                label: "3D Models",
+                value: '<a href="https://www.mixamo.com/" target="_blank" rel="noopener noreferrer">Mixamo</a> — Swat Guy (Idle / Running / Shooting Pistol / Dying), Mannequin (Idle / Running / Punching / Dying)'
+            },
+            {
+                label: "3D Models",
+                value: '<a href="https://quaternius.com/packs/cutemonsters.html" target="_blank" rel="noopener noreferrer">Cute Animated Monsters Pack</a> by Quaternius — Alien, Yellow Dragon, Yeti; CC0 1.0 Universal'
+            },
+            {
+                label: "Sound Effects",
+                value: '<a href="https://opengameart.org/content/random-sounds-samples" target="_blank" rel="noopener noreferrer">Random Sounds Samples</a> by Augmentality (Brandon Morris) — CC0; <a href="https://opengameart.org/content/platformer-sounds-terminal-interaction-door-shots-bang-and-footsteps" target="_blank" rel="noopener noreferrer">Platformer Sounds: Terminal, Interaction, Door, Shots, Bang and Footsteps</a> by yd — CC0'
+            },
+            {
+                label: "Music",
+                value: '<a href="https://opengameart.org/content/sci-fi-melancholy" target="_blank" rel="noopener noreferrer">Sci-Fi Melancholy</a> by firstspace — CC BY 4.0'
+            },
+            {
+                label: "Sound Effects",
+                value: "Player bullet fire sound — source and license under confirmation."
+            }
+        ],
+        media: [
+            {
+                type: "image",
+                src: "Images/Games/ShotArena.png",
+                alt: "リコイル・サバイバーのアリーナ画面",
+                caption: "都市シールドを守る、3Dアリーナでのサバイバル"
+            },
+            {
+                type: "image",
+                src: "Images/Games/ShotBattle.png",
+                alt: "リコイル・サバイバーのバトル画面",
+                caption: "迫る敵をショットで迎撃"
+            },
+            {
+                type: "image",
+                src: "Images/Games/ShotRecoil.png",
+                alt: "リコイル・サバイバーの反動移動画面",
+                caption: "撃った反動で、次の安全な場所へ滑る"
+            },
+            {
+                type: "image",
+                src: "Images/Games/ShotHud.png",
+                alt: "リコイル・サバイバーのHUD画面",
+                caption: "スコア、WAVE、ライフを見極めて生き残る"
+            }
+        ]
+    },
+    {
         slug: "bound",
         pageUrl: "bound.html",
         title: "BOUND",
@@ -43,12 +121,6 @@ const games = [
                 alt: "BOUND のキービジュアル",
                 caption: "キービジュアル"
             },
-            {
-                type: "image",
-                src: "Images/Games/BOUND.png",
-                alt: "BOUND のゲーム画面",
-                caption: "ゲーム画面"
-            }
         ],
         video: {
             title: "BOUND プレイ動画",
@@ -473,7 +545,7 @@ const games = [
         media: [
             {
                 type: "image",
-                src: "Images/Games/OddReversi (2).png",
+                src: "Images/Games/OddReversi.png",
                 alt: "おかしなリバーシ のアイコン",
                 caption: "Roblox 掲載画像"
             }
@@ -512,11 +584,6 @@ const getPrimaryPlayUrl = (game) => {
 };
 
 const parseReleaseDateValue = (release) => {
-    const normalizedMatch = String(release).match(/(\d{4})年(\d{1,2})月/);
-    if (normalizedMatch) {
-        return Number(normalizedMatch[1]) * 100 + Number(normalizedMatch[2]);
-    }
-
     const match = String(release).match(/(\d{4})年(\d{1,2})月/);
     if (!match) {
         return 0;
@@ -525,10 +592,22 @@ const parseReleaseDateValue = (release) => {
     return Number(match[1]) * 100 + Number(match[2]);
 };
 
+const getCardImage = (source) => {
+    const filename = source.split("/").pop() || "";
+    const basename = filename.replace(/\.[^.]+$/, "");
+    const slug = basename
+        .replace(/([a-z])([A-Z])/g, "$1-$2")
+        .replace(/[^a-zA-Z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .toLowerCase();
+
+    return `Images/Games/Cards/${slug}.webp`;
+};
+
 const createGameCard = (game) => `
     <a class="game-card" href="${game.pageUrl}">
         <div class="game-card-media">
-            <img src="${game.media[0].src}" alt="${escapeHtml(game.media[0].alt)}" loading="lazy">
+            <img src="${game.cardImage || getCardImage(game.media[0].src)}" alt="${escapeHtml(game.media[0].alt)}" width="256" height="256" loading="lazy">
         </div>
         <div class="game-card-body">
             <div class="game-card-topline">
@@ -1128,7 +1207,39 @@ const setupMediaGallery = (root) => {
     }
 };
 
+const addGameStructuredData = () => {
+    const slug = document.body.dataset.gameSlug;
+    const game = games.find((entry) => entry.slug === slug);
+
+    if (!game) {
+        return;
+    }
+
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        name: game.title,
+        description: game.description,
+        genre: game.genre,
+        image: new URL(game.media[0].src, window.location.href).href,
+        url: new URL(game.pageUrl, window.location.href).href,
+        playMode: "SinglePlayer",
+        applicationCategory: "Game",
+        operatingSystem: "Web",
+        author: {
+            "@type": "Person",
+            name: siteMeta.profileName
+        },
+        sameAs: game.externalLinks.map((link) => link.url)
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
+    addGameStructuredData();
     renderHomePage();
     renderGameDetail();
 });
