@@ -1,7 +1,7 @@
 const games = [
     {
-        slug: "shot-last-light-protocol",
-        pageUrl: "shot-last-light-protocol.html",
+        slug: "recoil-survivor",
+        pageUrl: "recoil-survivor.html",
         cardImage: "Images/Games/RecoilSurvivor.gif",
         title: "リコイル・サバイバー（制作中）",
         shortTitle: "リコイル・サバイバー（制作中）",
