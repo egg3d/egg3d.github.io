@@ -2,7 +2,7 @@ const games = [
     {
         slug: "shot-last-light-protocol",
         pageUrl: "shot-last-light-protocol.html",
-        cardImage: "Images/Games/Cards/shot-last-light-protocol.webp",
+        cardImage: "Images/Games/RecoilSurvivor.gif",
         title: "リコイル・サバイバー（制作中）",
         shortTitle: "リコイル・サバイバー（制作中）",
         tagline: "撃つたびに、戦場を滑る。反動だけで生き残れ。",
@@ -51,6 +51,12 @@ const games = [
             }
         ],
         media: [
+            {
+                type: "image",
+                src: "Images/Games/RecoilSurvivor.gif",
+                alt: "リコイル・サバイバーのゲームプレイ映像",
+                caption: "ショットの反動で敵の群れをかわす"
+            },
             {
                 type: "image",
                 src: "Images/Games/ShotArena.png",
