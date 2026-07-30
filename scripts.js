@@ -1,10 +1,10 @@
 const games = [
     {
-        slug: "hakusen-fumishimete",
-        pageUrl: "hakusen-fumishimete.html",
+        slug: "shiroi-toko-igai-michi-janai",
+        pageUrl: "shiroi-toko-igai-michi-janai.html",
         cardImage: "Images/Games/Shiro/icon.png",
-        title: "白線、踏みしめて。",
-        shortTitle: "白線、踏みしめて。",
+        title: "白いとこ以外、道じゃない",
+        shortTitle: "白いとこ以外、道じゃない",
         tagline: "白いところだけを踏んで、家まで帰ろう。",
         description: "放課後、青路トワは「白いところだけを踏んで家まで帰る」という遊びを始めます。道路標示、校庭のライン、工事設備、車の屋根、室外機――町にある白いものを足場に、全6話の短い帰り道をジャンプで進む斜め見下ろし型3Dアクションです。",
         cardDescription: "町の白いものだけを足場に家を目指す、短編3Dジャンプアクション。",
@@ -79,7 +79,7 @@ const games = [
             {
                 type: "image",
                 src: "Images/Games/Shiro/title-screen.png",
-                alt: "白線、踏みしめて。のタイトル画面",
+                alt: "白いとこ以外、道じゃないのタイトル画面",
                 caption: "青路トワと、夕方の帰り道"
             },
             {
