@@ -78,9 +78,9 @@ const games = [
         media: [
             {
                 type: "image",
-                src: "Images/Games/Shiro/title-screen.png",
-                alt: "白いとこ以外、道じゃないのタイトル画面",
-                caption: "青路トワと、夕方の帰り道"
+                src: "Images/Games/Shiro/icon.png",
+                alt: "白線を跳び進む青路トワのアイコン",
+                caption: "白いところだけを踏んで、家まで帰ろう"
             },
             {
                 type: "image",
