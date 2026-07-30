@@ -1,5 +1,102 @@
 const games = [
     {
+        slug: "hakusen-fumishimete",
+        pageUrl: "hakusen-fumishimete.html",
+        cardImage: "Images/Games/Shiro/icon.png",
+        title: "白線、踏みしめて。",
+        shortTitle: "白線、踏みしめて。",
+        tagline: "白いところだけを踏んで、家まで帰ろう。",
+        description: "放課後、青路トワは「白いところだけを踏んで家まで帰る」という遊びを始めます。道路標示、校庭のライン、工事設備、車の屋根、室外機――町にある白いものを足場に、全6話の短い帰り道をジャンプで進む斜め見下ろし型3Dアクションです。",
+        cardDescription: "町の白いものだけを足場に家を目指す、短編3Dジャンプアクション。",
+        status: "公開予約済み",
+        genre: "3D Jump Action",
+        platforms: ["unityroom"],
+        engine: "Godot",
+        release: "2026年8月",
+        playUrl: "https://unityroom.com/games/hakusen-fumishimete",
+        playLabel: "unityroomで見る",
+        availabilityNote: "現在はunity1week未開催のため、unityroomではまだ閲覧・プレイできません。2026年8月2日20:00までお待ちください。",
+        externalLinks: [
+            { label: "unityroom", url: "https://unityroom.com/games/hakusen-fumishimete" }
+        ],
+        features: [
+            "WASDで移動、Shiftでダッシュ。Spaceまたは左クリックですぐにジャンプし、移動中は進行方向の勢いを引き継ぎます。空中ではWASDで着地点を微調整できます。",
+            "道路標示から校庭、工事区画、立体駐車場、住宅前へと「白いもの」の意味が広がる全6話。",
+            "白ではない場所へ着地すると、直前の安全地帯からすぐに再挑戦。",
+            "最終話では、一度だけチョークで白い着地点を作って家を目指します。"
+        ],
+        credits: [
+            {
+                label: "Development",
+                value: "egg 3d Studio"
+            },
+            {
+                label: "Voice",
+                value: '<a href="https://voicevox.hiroshiba.jp/nemo/" target="_blank" rel="noopener noreferrer">VOICEVOX Nemo</a> — 男声1'
+            },
+            {
+                label: "Character",
+                value: '<a href="https://www.meshy.ai/" target="_blank" rel="noopener noreferrer">Meshy</a> user-generated protagonist rig; <a href="https://www.mixamo.com/" target="_blank" rel="noopener noreferrer">Adobe Mixamo</a> animations'
+            },
+            {
+                label: "Character Props",
+                value: '<a href="https://sketchfab.com/3d-models/sneakers-689c29ec3a8a4f44b32f616bcb97cfaa" target="_blank" rel="noopener noreferrer">sneakers</a> by abazibiz — CC BY 4.0; <a href="https://sketchfab.com/3d-models/japanese-school-backpack-608a48391a534d9aa67bbe82e2a96748" target="_blank" rel="noopener noreferrer">Japanese School Backpack</a> by AFX/CGMotion 3DModel Maker — CC BY 4.0'
+            },
+            {
+                label: "Environment",
+                value: '<a href="https://yarenkrmn.itch.io/low-poly-japanese-houses" target="_blank" rel="noopener noreferrer">Low Poly Japanese Houses</a> by yarenkrmn; <a href="https://seaeees.itch.io/japanese-road-signs" target="_blank" rel="noopener noreferrer">Japanese Road Signs</a> by Seaeees'
+            },
+            {
+                label: "Environment",
+                value: '<a href="https://kenney.nl/assets/city-kit-roads" target="_blank" rel="noopener noreferrer">City Kit (Roads)</a> by Kenney — CC0 1.0; <a href="https://valentin-laffitte.itch.io/retro-vending-machine-3d-asset" target="_blank" rel="noopener noreferrer">Retro Vending Machine 3D Asset</a> by Valentin Laffitte — CC0 1.0; <a href="https://yumeforge.itch.io/japanese-rural-village" target="_blank" rel="noopener noreferrer">Japanese Rural Village - Free Pack</a> by YumeForge'
+            },
+            {
+                label: "Vehicles",
+                value: '<a href="https://sketchfab.com/3d-models/generic-passenger-car-pack-20f9af9b8a404d5cb022ac6fe87f21f5" target="_blank" rel="noopener noreferrer">Generic passenger car pack</a> by Comrade1280 — CC BY 4.0; <a href="https://sketchfab.com/3d-models/low-poly-japan-offroad-car-5bde8c57de3d4be880ed6457f88636ad" target="_blank" rel="noopener noreferrer">Low poly Japan Offroad Car</a> by Han66st — CC BY 4.0'
+            },
+            {
+                label: "Music",
+                value: '<a href="https://opengameart.org/content/two-simple-game-music-loops" target="_blank" rel="noopener noreferrer">Two Simple Game Music Loops</a> by qubodup — CC0 1.0'
+            },
+            {
+                label: "Sound Effects",
+                value: '<a href="https://kenney.nl/assets/impact-sounds" target="_blank" rel="noopener noreferrer">Impact Sounds</a> and <a href="https://kenney.nl/assets/rpg-audio" target="_blank" rel="noopener noreferrer">RPG Audio</a> by Kenney — CC0 1.0'
+            },
+            {
+                label: "Font",
+                value: '<a href="https://fonts.google.com/noto/specimen/Noto+Sans+JP" target="_blank" rel="noopener noreferrer">Noto Sans JP</a> — SIL Open Font License 1.1'
+            },
+            {
+                label: "Stage Geometry",
+                value: '<a href="https://github.com/microsoft/MoGe" target="_blank" rel="noopener noreferrer">MoGe-2</a> by Microsoft — MIT License'
+            },
+            {
+                label: "Generated Art",
+                value: "Title key art and stage presentation images — user-generated output created with OpenAI image generation"
+            }
+        ],
+        media: [
+            {
+                type: "image",
+                src: "Images/Games/Shiro/title-screen.png",
+                alt: "白線、踏みしめて。のタイトル画面",
+                caption: "青路トワと、夕方の帰り道"
+            },
+            {
+                type: "image",
+                src: "Images/Games/Shiro/gameplay.png",
+                alt: "白い道路標示をジャンプで進むゲーム画面",
+                caption: "白いところだけが安全な足場"
+            },
+            {
+                type: "image",
+                src: "Images/Games/Shiro/towa-white-line-title.png",
+                alt: "青路トワが白い道路標示へ跳ぶキービジュアル",
+                caption: "白を見つけて、次の一歩へ"
+            }
+        ]
+    },
+    {
         slug: "recoil-survivor",
         pageUrl: "recoil-survivor.html",
         cardImage: "Images/Games/RecoilSurvivor.gif",
