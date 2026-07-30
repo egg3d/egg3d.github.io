@@ -3,29 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>リコイル・サバイバー（制作中） | なまたまご</title>
-    <meta name="description" content="制作中：撃つたびに、戦場を滑る。反動だけで生き残るGodot Engine製3Dアリーナシューティング、リコイル・サバイバーの紹介ページ。">
-    <meta property="og:title" content="リコイル・サバイバー（制作中） | なまたまご">
-    <meta property="og:description" content="反動だけで生き残れ。Godot Engineで制作中の3Dアリーナシューティング。">
+    <title>リコイル・サバイバー | egg 3d Studio</title>
+    <meta name="description" content="撃てば、逆へ飛ぶ。射撃の反動だけで地下避難路を守り抜く3Dアクションシューティング『リコイル・サバイバー』公式紹介ページ。">
+    <meta name="theme-color" content="#f7fcff">
+    <meta property="og:title" content="リコイル・サバイバー | egg 3d Studio">
+    <meta property="og:description" content="撃てば、逆へ飛ぶ。反動移動で6つの防衛ステージに挑む3Dアクションシューティング。">
     <meta property="og:url" content="https://egg3d.github.io/recoil-survivor.html">
-    <meta property="og:image" content="https://egg3d.github.io/Images/Games/ShotArena.png">
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="なまたまご">
+    <meta property="og:image" content="https://egg3d.github.io/Images/Games/recoil-survivor-recoil-hero.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="egg 3d Studio">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@egg_3d">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="Images/Games/recoil-survivor-recoil-hero.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="recoil-survivor.css">
     <script src="load-common.js" defer></script>
     <script src="scripts.js" defer></script>
 </head>
-<body data-page="game" data-game-slug="recoil-survivor">
-    <main id="game-detail-root" class="page-shell">
-        <section class="content-section">
-            <h1>リコイル・サバイバー（制作中）</h1>
-            <p>Godot Engineで制作中の3Dアリーナシューティング。</p>
-            <a class="button button-primary" href="https://unityroom.com/games/recoil-survivor">ゲームをプレイ</a>
+<body class="recoil-product-page" data-page="game" data-game-slug="recoil-survivor" data-static-game-detail="true">
+    <main id="game-detail-root">
+        <section class="rs-hero" aria-labelledby="rs-title">
+            <div class="rs-hero-shade" aria-hidden="true"></div>
+            <div class="rs-shell rs-hero-inner">
+                <div class="rs-hero-copy">
+                    <p class="rs-overline"><span>RECOIL ACTION</span> × SURVIVAL</p>
+                    <h1 id="rs-title" class="rs-title"><span>リコイル</span><span>サバイバー</span></h1>
+                    <p class="rs-hero-catch">撃てば、逆へ飛ぶ。</p>
+                    <p class="rs-hero-lead">照準は攻撃方向。反動は移動方向。<br>一発ごとに戦場の位置関係をひっくり返せ。</p>
+                    <div class="rs-hero-actions">
+                        <a class="rs-button rs-button-primary" href="https://unityroom.com/games/recoil-survivor" target="_blank" rel="noopener noreferrer">
+                            <span class="rs-play-icon" aria-hidden="true">▶</span>
+                            無料でプレイ
+                        </a>
+                        <a class="rs-text-link" href="#action">遊び方を見る <span aria-hidden="true">↓</span></a>
+                    </div>
+                    <p class="rs-dev-note">個人制作・開発中</p>
+                </div>
+            </div>
+            <div class="rs-hero-media">
+                <img class="rs-hero-art" src="Images/Games/recoil-survivor-recoil-hero.webp" alt="右へエネルギー弾を撃ち、その反動で左へ押し戻される白い防衛ユニットと過去の残像" width="1672" height="941" fetchpriority="high">
+            </div>
+        </section>
+
+        <section id="action" class="rs-section rs-action">
+            <div class="rs-shell">
+                <header class="rs-section-heading rs-section-heading-center">
+                    <p class="rs-section-kicker">HOW TO SURVIVE</p>
+                    <h2>撃つ。飛ぶ。生き残る。</h2>
+                    <p>移動キーはありません。銃を撃った反動だけが、あなたの足になります。</p>
+                </header>
+
+                <div class="rs-action-stage">
+                    <div class="rs-action-copy">
+                        <p class="rs-step-number">01</p>
+                        <h3>敵を狙って、<br>進路を決める。</h3>
+                        <p>弾が飛ぶ方向と、機体が飛ぶ方向は正反対。敵への攻撃と次の回避を、一度の射撃で組み立てます。</p>
+                    </div>
+                    <div class="rs-action-visual">
+                        <span class="rs-direction rs-direction-shot">SHOT <b aria-hidden="true">→</b></span>
+                        <img src="Images/Games/RecoilSurvivor/player/survivor-profile.webp" alt="ゲームに登場する白い防衛ユニット" loading="lazy" width="1448" height="1086">
+                        <span class="rs-direction rs-direction-recoil"><b aria-hidden="true">←</b> RECOIL</span>
+                    </div>
+                    <div class="rs-action-copy rs-action-copy-right">
+                        <p class="rs-step-number">02</p>
+                        <h3>反動で、<br>包囲を抜ける。</h3>
+                        <p>敵は四方から迫り、ウェーブごとに数と速さを増していきます。止まらず、撃ち続けて安全地帯を作り出そう。</p>
+                    </div>
+                </div>
+
+                <div class="rs-action-rules">
+                    <article><span aria-hidden="true">◎</span><h3>狙う</h3><p>照準で射撃方向を決める</p></article>
+                    <article><span aria-hidden="true">↯</span><h3>撃つ</h3><p>攻撃と移動が同時に始まる</p></article>
+                    <article><span aria-hidden="true">⇠</span><h3>飛ぶ</h3><p>弾と反対方向へノックバック</p></article>
+                    <article><span aria-hidden="true">◇</span><h3>守る</h3><p>避難路で次のウェーブを迎える</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section id="enemies" class="rs-section rs-enemies">
+            <div class="rs-shell">
+                <header class="rs-section-heading rs-section-heading-light">
+                    <p class="rs-section-kicker">ENEMY FILE</p>
+                    <h2>地下避難路に、<br>異形の群れが迫る。</h2>
+                    <p>ここにいるのは、すべてゲーム本編に登場する敵。ウェーブを越えるほど、戦場は逃げ場を失っていきます。</p>
+                </header>
+
+                <div class="rs-enemy-feature">
+                    <div class="rs-enemy-feature-copy">
+                        <span class="rs-file-number">FILE 01</span>
+                        <p class="rs-enemy-class">HOSTILE UNIT</p>
+                        <h3>COIL HOUND</h3>
+                        <p class="rs-enemy-jp">コイルハウンド</p>
+                        <p class="rs-enemy-note">地下施設を駆ける機械獣。青白く発光するコイルと四足のシルエットが、接近の合図です。</p>
+                    </div>
+                    <div class="rs-enemy-feature-art">
+                        <span class="rs-enemy-ring" aria-hidden="true"></span>
+                        <img src="Images/Games/RecoilSurvivor/enemies/coil-hound.webp" alt="ゲームに登場する敵、コイルハウンド" loading="lazy" width="1254" height="1254">
+                    </div>
+                </div>
+
+                <div class="rs-enemy-grid">
+                    <article class="rs-enemy-card rs-enemy-card-yellow">
+                        <span>FILE 02</span>
+                        <img src="Images/Games/RecoilSurvivor/enemies/skitter.webp" alt="ゲームに登場する敵、スキッター" loading="lazy" width="1254" height="1254">
+                        <div><h3>SKITTER</h3><p>スキッター</p></div>
+                    </article>
+                    <article class="rs-enemy-card rs-enemy-card-blue">
+                        <span>FILE 03</span>
+                        <img src="Images/Games/RecoilSurvivor/enemies/overseer.webp" alt="ゲームに登場する敵、オーバーシアー" loading="lazy" width="1254" height="1254">
+                        <div><h3>OVERSEER</h3><p>オーバーシアー</p></div>
+                    </article>
+                    <article class="rs-enemy-card rs-enemy-card-violet">
+                        <span>FILE 04</span>
+                        <img src="Images/Games/RecoilSurvivor/enemies/wisp.webp" alt="ゲームに登場する敵、ウィスプ" loading="lazy" width="1254" height="1254">
+                        <div><h3>WISP</h3><p>ウィスプ</p></div>
+                    </article>
+                    <article class="rs-enemy-card rs-enemy-card-pink">
+                        <span>FILE 05</span>
+                        <img src="Images/Games/RecoilSurvivor/enemies/siren.webp" alt="ゲームに登場する敵、サイレン" loading="lazy" width="1254" height="1254">
+                        <div><h3>SIREN</h3><p>サイレン</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="weapons" class="rs-section rs-weapons">
+            <div class="rs-shell">
+                <header class="rs-section-heading">
+                    <p class="rs-section-kicker">WEAPON ARCHIVE</p>
+                    <h2>一発の個性が、<br>動き方を変える。</h2>
+                    <p>武器が変われば、攻撃だけでなく反動のリズムも変わります。ゲームで使える武装の一部を紹介します。</p>
+                </header>
+
+                <div class="rs-weapon-grid">
+                    <article class="rs-weapon-card rs-weapon-card-featured">
+                        <div class="rs-weapon-index">W-01</div>
+                        <img src="Images/Games/RecoilSurvivor/weapons/standard-gun.webp" alt="ゲームに登場する武器、スタンダードガン" loading="lazy" width="1448" height="1086">
+                        <div class="rs-weapon-copy"><p>STANDARD</p><h3>STANDARD GUN</h3><span>スタンダードガン</span></div>
+                    </article>
+                    <article class="rs-weapon-card">
+                        <div class="rs-weapon-index">W-02</div>
+                        <img src="Images/Games/RecoilSurvivor/weapons/vector-pulse.webp" alt="ゲームに登場する武器、ベクターパルス" loading="lazy" width="1448" height="1086">
+                        <div class="rs-weapon-copy"><p>WEAPON</p><h3>VECTOR PULSE</h3><span>ベクターパルス</span></div>
+                    </article>
+                    <article class="rs-weapon-card">
+                        <div class="rs-weapon-index">W-03</div>
+                        <img src="Images/Games/RecoilSurvivor/weapons/tempest-gatling.webp" alt="ゲームに登場する武器、テンペストガトリング" loading="lazy" width="1448" height="1086">
+                        <div class="rs-weapon-copy"><p>WEAPON</p><h3>TEMPEST GATLING</h3><span>テンペストガトリング</span></div>
+                    </article>
+                    <article class="rs-weapon-card">
+                        <div class="rs-weapon-index">W-04</div>
+                        <img src="Images/Games/RecoilSurvivor/weapons/orbit-mortar.webp" alt="ゲームに登場する武器、オービットモーター" loading="lazy" width="1448" height="1086">
+                        <div class="rs-weapon-copy"><p>WEAPON</p><h3>ORBIT MORTAR</h3><span>オービットモーター</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="campaign" class="rs-section rs-campaign">
+            <div class="rs-shell">
+                <div class="rs-campaign-intro">
+                    <header class="rs-section-heading rs-section-heading-light">
+                        <p class="rs-section-kicker">STORY CAMPAIGN</p>
+                        <h2>最後の避難路を、<br>6つの防衛戦でつなげ。</h2>
+                    </header>
+                    <p>あなたは生存者を守る、最後の小型防衛ユニット。地下避難路の要所を渡り歩き、迫る敵を退けながら最終避難設備を目指します。</p>
+                </div>
+
+                <div class="rs-story-gallery">
+                    <figure class="rs-story-card rs-story-card-large">
+                        <img src="Images/Games/RecoilSurvivor/story/stage-01.webp" alt="ステージ1、工業デッキと避難ハッチの導入コミック" loading="lazy" width="1920" height="1080">
+                        <figcaption><span>STAGE 01</span><strong>工業デッキ／避難ハッチ</strong></figcaption>
+                    </figure>
+                    <figure class="rs-story-card">
+                        <img src="Images/Games/RecoilSurvivor/story/stage-02.webp" alt="ステージ2、廃棄基地と換気施設の導入コミック" loading="lazy" width="1672" height="941">
+                        <figcaption><span>STAGE 02</span><strong>廃棄基地／換気施設</strong></figcaption>
+                    </figure>
+                    <figure class="rs-story-card">
+                        <img src="Images/Games/RecoilSurvivor/story/stage-03.webp" alt="ステージ3、研究施設とエネルギー炉の導入コミック" loading="lazy" width="1448" height="1086">
+                        <figcaption><span>STAGE 03</span><strong>研究施設／エネルギー炉</strong></figcaption>
+                    </figure>
+                </div>
+
+                <ol class="rs-stage-route" aria-label="全6ステージ">
+                    <li class="is-shown"><span>01</span><strong>工業デッキ</strong></li>
+                    <li class="is-shown"><span>02</span><strong>廃棄基地</strong></li>
+                    <li class="is-shown"><span>03</span><strong>研究施設</strong></li>
+                    <li><span>04</span><strong>地下発電層</strong></li>
+                    <li><span>05</span><strong>宇宙港外周</strong></li>
+                    <li><span>06</span><strong>最終決戦デッキ</strong></li>
+                </ol>
+                <p class="rs-campaign-note">各ステージの前には、台詞に頼らない導入コミックが展開します。</p>
+            </div>
+        </section>
+
+        <section class="rs-product-info" aria-labelledby="rs-product-title">
+            <div class="rs-shell rs-product-info-inner">
+                <header>
+                    <p class="rs-section-kicker">GAME INFORMATION</p>
+                    <h2 id="rs-product-title">ゲーム情報</h2>
+                    <p>ブラウザで遊べる、ひとり用の反動アクション。</p>
+                </header>
+                <dl>
+                    <div><dt>ジャンル</dt><dd>3Dアクションシューティング</dd></div>
+                    <div><dt>プレイ人数</dt><dd>1人</dd></div>
+                    <div><dt>対応環境</dt><dd>Webブラウザ</dd></div>
+                    <div><dt>開発</dt><dd>egg 3d Studio</dd></div>
+                </dl>
+                <p class="rs-product-status"><span>STATUS</span> 現在開発中</p>
+            </div>
+        </section>
+
+        <section class="rs-final-cta" aria-labelledby="rs-final-title">
+            <div class="rs-final-orbit rs-final-orbit-one" aria-hidden="true"></div>
+            <div class="rs-final-orbit rs-final-orbit-two" aria-hidden="true"></div>
+            <div class="rs-shell rs-final-inner">
+                <p class="rs-section-kicker">YOUR SHOT. YOUR WAY OUT.</p>
+                <h2 id="rs-final-title">反動だけで、<br>生き残れ。</h2>
+                <p>ブラウザですぐにプレイできます。</p>
+                <a class="rs-button rs-button-light" href="https://unityroom.com/games/recoil-survivor" target="_blank" rel="noopener noreferrer">
+                    <span class="rs-play-icon" aria-hidden="true">▶</span>
+                    unityroomでプレイ
+                </a>
+                <small>※ 現在開発中のため、内容は変更される場合があります。</small>
+            </div>
         </section>
     </main>
 </body>

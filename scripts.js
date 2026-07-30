@@ -3,12 +3,13 @@ const games = [
         slug: "recoil-survivor",
         pageUrl: "recoil-survivor.html",
         cardImage: "Images/Games/RecoilSurvivor.gif",
-        title: "リコイル・サバイバー（制作中）",
-        shortTitle: "リコイル・サバイバー（制作中）",
-        tagline: "撃つたびに、戦場を滑る。反動だけで生き残れ。",
-        description: "Godot Engineで制作中の、ショットの反動だけで位置を変えながら迫り来る敵を迎え撃つ短時間リトライ型3Dアリーナシューティングです。狙いとチャージで一撃の威力と反動を調整し、敵の包囲を切り抜けましょう。パワーコアでオーバードライブを発動し、WAVE 5の突破を目指します。",
-        cardDescription: "反動で滑り、敵の群れを突破する3Dアリーナシューティング。",
+        title: "リコイル・サバイバー",
+        shortTitle: "リコイル・サバイバー",
+        tagline: "撃てば、逆へ飛ぶ。反動だけで生き残れ。",
+        description: "射撃の反動だけで移動しながら、地下避難路へ迫る敵を迎え撃つ3Dアクションシューティングです。攻撃方向と移動方向を一発ごとに組み立て、6つの防衛ステージを突破して生存者を最終避難設備へ導きます。",
+        cardDescription: "射撃の反動だけで地下避難路を守り抜く3Dアクションシューティング。",
         status: "制作中",
+        isComingSoon: true,
         genre: "3D Arena Shooter",
         platforms: ["unityroom", "Google Play"],
         engine: "Godot",
@@ -19,10 +20,10 @@ const games = [
             { label: "unityroom", url: "https://unityroom.com/games/recoil-survivor" }
         ],
         features: [
-            "Godot Engineで制作中の3Dアリーナシューティング。",
-            "ショットの反動だけで移動する、狙いと位置取りが一体になったアクション。",
-            "ショットをチャージして威力と反動を調整し、敵の包囲を切り抜けます。",
-            "パワーコアの回収でオーバードライブを発動。連射性能を上げてWAVE 5を突破します。"
+            "Godot Engineで制作中の3Dアクションシューティング。",
+            "移動キーを使わず、ショットの反動だけで戦場を移動。",
+            "四方から迫る敵をかわしながら、ウェーブごとの防衛戦に挑戦。",
+            "6ステージのストーリーキャンペーンとエンドレス防衛を収録。"
         ],
         credits: [
             {
@@ -53,33 +54,9 @@ const games = [
         media: [
             {
                 type: "image",
-                src: "Images/Games/RecoilSurvivor.gif",
-                alt: "リコイル・サバイバーのゲームプレイ映像",
-                caption: "ショットの反動で敵の群れをかわす"
-            },
-            {
-                type: "image",
-                src: "Images/Games/ShotArena.png",
-                alt: "リコイル・サバイバーのアリーナ画面",
-                caption: "都市シールドを守る、3Dアリーナでのサバイバル"
-            },
-            {
-                type: "image",
-                src: "Images/Games/ShotBattle.png",
-                alt: "リコイル・サバイバーのバトル画面",
-                caption: "迫る敵をショットで迎撃"
-            },
-            {
-                type: "image",
-                src: "Images/Games/ShotRecoil.png",
-                alt: "リコイル・サバイバーの反動移動画面",
-                caption: "撃った反動で、次の安全な場所へ滑る"
-            },
-            {
-                type: "image",
-                src: "Images/Games/ShotHud.png",
-                alt: "リコイル・サバイバーのHUD画面",
-                caption: "スコア、WAVE、ライフを見極めて生き残る"
+                src: "Images/Games/recoil-survivor-recoil-hero.png",
+                alt: "射撃の反動で移動するリコイル・サバイバー",
+                caption: "撃てば、弾と反対方向へ飛ぶ"
             }
         ]
     },
@@ -610,10 +587,20 @@ const getCardImage = (source) => {
     return `Images/Games/Cards/${slug}.webp`;
 };
 
-const createGameCard = (game) => `
-    <a class="game-card" href="${game.pageUrl}">
+const createGameCard = (game) => {
+    const cardTag = game.isComingSoon ? "article" : "a";
+    const cardAttributes = game.isComingSoon
+        ? 'class="game-card game-card-coming-soon" aria-label="' + escapeHtml(`${game.title}（準備中）`) + '"'
+        : `class="game-card" href="${game.pageUrl}"`;
+    const comingSoonBadge = game.isComingSoon
+        ? '<span class="game-card-status"><span aria-hidden="true">⌛</span> 準備中</span>'
+        : "";
+
+    return `
+    <${cardTag} ${cardAttributes}>
         <div class="game-card-media">
             <img src="${game.cardImage || getCardImage(game.media[0].src)}" alt="${escapeHtml(game.media[0].alt)}" width="256" height="256" loading="lazy">
+            ${comingSoonBadge}
         </div>
         <div class="game-card-body">
             <div class="game-card-topline">
@@ -622,8 +609,9 @@ const createGameCard = (game) => `
             <p class="game-card-tagline">${escapeHtml(game.tagline)}</p>
             <p class="game-card-release">公開: ${escapeHtml(game.release)}</p>
         </div>
-    </a>
+    </${cardTag}>
 `;
+};
 
 const renderHomePage = () => {
     const shelves = document.getElementById("game-shelves");
@@ -864,6 +852,10 @@ const renderGameDetail = () => {
         return;
     }
 
+    if (document.body.dataset.staticGameDetail === "true") {
+        return;
+    }
+
     const game = games.find((entry) => entry.slug === slug);
 
     if (!game) {
@@ -895,6 +887,7 @@ const renderGameDetail = () => {
                 <div class="hero-actions">
                     <a class="button button-primary" href="${getPrimaryPlayUrl(game)}" target="_blank" rel="noopener noreferrer">${escapeHtml(game.playLabel)}</a>
                 </div>
+                ${game.availabilityNote ? `<p class="game-availability-note" role="note">${escapeHtml(game.availabilityNote)}</p>` : ""}
             </aside>
         </section>
 

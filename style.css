@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bg: #0f172a;
     --surface: #f7f9fc;
     --surface-strong: #ffffff;
@@ -474,10 +474,46 @@ main.page-shell {
     box-shadow: 0 30px 60px rgba(15, 35, 72, 0.18);
 }
 
+.game-card-coming-soon {
+    cursor: not-allowed;
+}
+
+.game-card-coming-soon:hover {
+    transform: none;
+    box-shadow: none;
+}
+
 .game-card-media {
+    position: relative;
     aspect-ratio: 1;
     overflow: hidden;
     background: linear-gradient(180deg, #dbe7ff, #c8dafd);
+}
+
+.game-card-coming-soon .game-card-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 35, 72, 0.3);
+}
+
+.game-card-status {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    right: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    color: #ffffff;
+    background: rgba(15, 35, 72, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    box-shadow: 0 8px 24px rgba(15, 35, 72, 0.22);
 }
 
 .game-card-media img {
@@ -670,6 +706,18 @@ main.page-shell {
     font-size: 1.05rem;
     font-weight: 600;
     margin: 0 0 18px;
+}
+
+.game-availability-note {
+    margin: 18px 0 0;
+    padding: 14px 16px;
+    color: #725210;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.7;
+    background: #fff7d9;
+    border: 1px solid #eed38b;
+    border-radius: 12px;
 }
 
 .game-summary-description {
