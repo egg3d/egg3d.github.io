@@ -920,6 +920,100 @@ main.page-shell {
     display: block;
 }
 
+.game-fact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.game-fact {
+    display: grid;
+    gap: 5px;
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.game-fact span {
+    color: var(--text-soft);
+    font-size: 0.78rem;
+}
+
+.game-fact strong {
+    color: var(--text-dark);
+    font-size: 0.94rem;
+}
+
+.game-title-line {
+    display: block;
+}
+
+.chapter-section {
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 92% 6%, rgba(245, 185, 63, 0.2), transparent 28%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(244, 248, 255, 0.98));
+}
+
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.chapter-card {
+    position: relative;
+    min-height: 210px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 14px 34px rgba(38, 53, 83, 0.08);
+}
+
+.chapter-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 5px;
+    border-radius: 22px 0 0 22px;
+    background: linear-gradient(180deg, var(--accent), #ffd86a);
+}
+
+.chapter-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.chapter-number {
+    color: #815400;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.chapter-location {
+    color: var(--text-soft);
+    font-size: 0.74rem;
+    text-align: right;
+}
+
+.chapter-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.18rem;
+}
+
+.chapter-card p {
+    margin: 0;
+    color: var(--text-soft);
+    line-height: 1.75;
+}
+
 .spec-grid .spec-card:nth-child(3),
 .spec-grid .spec-card:nth-child(4) {
     display: none;
@@ -1059,6 +1153,10 @@ main.page-shell {
     .game-carousel {
         grid-auto-columns: minmax(260px, 280px);
     }
+
+    .chapter-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 760px) {
@@ -1114,6 +1212,15 @@ main.page-shell {
         --media-stage-top: 8px;
         --media-stage-gap: 12px;
         --media-stage-bottom: 64px;
+    }
+
+    .game-fact-grid,
+    .chapter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chapter-card {
+        min-height: 0;
     }
 
 }

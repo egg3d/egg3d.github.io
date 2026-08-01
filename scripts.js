@@ -4,26 +4,73 @@ const games = [
         pageUrl: "shiroi-toko-igai-michi-janai.html",
         cardImage: "Images/Games/Shiro/icon.png",
         title: "白いとこ以外、道じゃない",
+        titleLines: ["白いとこ以外、", "道じゃない"],
         shortTitle: "白いとこ以外、道じゃない",
         tagline: "白いところだけを踏んで、家まで帰ろう。",
-        description: "放課後、青路トワは「白いところだけを踏んで家まで帰る」という遊びを始めます。道路標示、校庭のライン、工事設備、車の屋根、室外機――町にある白いものを足場に、全6話の短い帰り道をジャンプで進む斜め見下ろし型3Dアクションです。",
-        cardDescription: "町の白いものだけを足場に家を目指す、短編3Dジャンプアクション。",
+        description: "放課後、11歳の青路トワは「白いところだけを踏んで家まで帰る」という遊びを始めます。けれど、白線を追うほど家とは違う方向へ。道路標示、校庭のライン、工事設備、車の屋根、室外機――町にある白いものを足場に、昨日の失敗も抱えながら家を目指す、全6話の斜め見下ろし型3Dジャンプアクションです。",
+        cardDescription: "白いものだけを足場に、トワの少し遠回りな帰宅を描く全6話の3Dジャンプアクション。",
         status: "公開予約済み",
         genre: "3D Jump Action",
         platforms: ["unityroom"],
         engine: "Godot",
-        release: "2026年8月",
-        playUrl: "https://unityroom.com/games/hakusen-fumishimete",
-        playLabel: "unityroomで見る",
-        availabilityNote: "現在はunity1week未開催のため、unityroomではまだ閲覧・プレイできません。2026年8月2日20:00までお待ちください。",
+        release: "2026年8月2日",
+        releaseAt: "2026-08-02T20:00:00+09:00",
+        playUrl: "https://unityroom.com/games/shiroi-toko-igai-michi-janai",
+        playLabel: "unityroomでプレイ",
+        availabilityNote: "unity1weekの公開予約中です。2026年8月2日20:00から一般公開されます。",
         externalLinks: [
-            { label: "unityroom", url: "https://unityroom.com/games/hakusen-fumishimete" }
+            { label: "unityroomでゲームを開く", url: "https://unityroom.com/games/shiroi-toko-igai-michi-janai" }
+        ],
+        facts: [
+            { label: "想定プレイ時間", value: "5〜8分" },
+            { label: "対応操作", value: "キーボード / タッチ" },
+            { label: "参加イベント", value: "unity1week「しろ」" }
         ],
         features: [
-            "WASDで移動、Shiftでダッシュ。Spaceまたは左クリックですぐにジャンプし、移動中は進行方向の勢いを引き継ぎます。空中ではWASDで着地点を微調整できます。",
-            "道路標示から校庭、工事区画、立体駐車場、住宅前へと「白いもの」の意味が広がる全6話。",
-            "白ではない場所へ着地すると、直前の安全地帯からすぐに再挑戦。",
-            "最終話では、一度だけチョークで白い着地点を作って家を目指します。"
+            "WASDで移動、Shiftでダッシュ。Spaceまたは左クリックですぐに跳び、走る勢いをそのままジャンプへつなげます。空中ではWASDで着地点を微調整できます。",
+            "道路標示、走る車、校庭のライン引き、点滅する工事足場、立体駐車場の二つのルート、家のインターホンへと、話ごとに「白」の遊び方が変化します。",
+            "白ではない場所へ着地すると「白じゃない！」。短い演出のあと、直前の安全地帯からすぐに再挑戦できます。",
+            "青路トワの走り・跳躍・着地アニメーション、足音とランドセルの揺れ、頭上に現れる会話、全編のキャラクターボイスで帰り道を描きます。",
+            "PCのキーボード／マウスだけでなく、スマートフォンでは画面上のスティックとジャンプボタンで遊べます。",
+            "全6話の帰宅タイムを計測し、クリア後はunityroomの最速ランキングへの送信とXへの結果共有ができます。"
+        ],
+        chapters: [
+            {
+                number: "1話",
+                title: "近道のはず",
+                location: "渋谷・松濤／神泉の坂道",
+                description: "太い道路標示をたどり、白い場所だけが安全という基本ルールを覚えます。"
+            },
+            {
+                number: "2話",
+                title: "家、どっちだっけ？",
+                location: "西新宿",
+                description: "細い白線と長距離ジャンプに挑戦。三方向を行き交う車にも注意が必要です。"
+            },
+            {
+                number: "3話",
+                title: "今日は本当に近道",
+                location: "放課後の校庭",
+                description: "複数のライン引きから正しい一台を選び、新しく描かれた白線で道をつなぎます。"
+            },
+            {
+                number: "4話",
+                title: "工事中の近道",
+                location: "高架下・工事区画",
+                description: "一定間隔で消える白いバリケードと足場の順番を見極めて渡ります。"
+            },
+            {
+                number: "5話",
+                title: "見覚えのある高さ",
+                location: "立体駐車場・屋上",
+                description: "安全な遠回りの床面ルートか、車と設備を渡る難しい近道かを選びます。"
+            },
+            {
+                number: "最終話",
+                title: "ただいま",
+                location: "家の前",
+                description: "インターホン前の白線へ到達すると母親の声が返り、玄関の光が最後の着地点になります。"
+            }
         ],
         credits: [
             {
@@ -32,7 +79,7 @@ const games = [
             },
             {
                 label: "Voice",
-                value: '<a href="https://voicevox.hiroshiba.jp/nemo/" target="_blank" rel="noopener noreferrer">VOICEVOX Nemo</a> — 男声1'
+                value: '<a href="https://aivis-project.com/" target="_blank" rel="noopener noreferrer">AivisSpeech</a> — にせ（青路トワ）／morioki（母親）、Aivis Common Model License 1.0'
             },
             {
                 label: "Character",
@@ -60,7 +107,7 @@ const games = [
             },
             {
                 label: "Sound Effects",
-                value: '<a href="https://kenney.nl/assets/impact-sounds" target="_blank" rel="noopener noreferrer">Impact Sounds</a> and <a href="https://kenney.nl/assets/rpg-audio" target="_blank" rel="noopener noreferrer">RPG Audio</a> by Kenney — CC0 1.0'
+                value: '<a href="https://kenney.nl/assets/impact-sounds" target="_blank" rel="noopener noreferrer">Impact Sounds</a> and <a href="https://kenney.nl/assets/rpg-audio" target="_blank" rel="noopener noreferrer">RPG Audio</a> by Kenney; <a href="https://opengameart.org/content/car-sound-effects-pack-low-quality" target="_blank" rel="noopener noreferrer">Car Sound Effects Pack</a> by GGBotNet; <a href="https://opengameart.org/content/scrapes" target="_blank" rel="noopener noreferrer">Scrapes</a> by AntumDeluge — CC0 1.0'
             },
             {
                 label: "Font",
@@ -78,15 +125,21 @@ const games = [
         media: [
             {
                 type: "image",
-                src: "Images/Games/Shiro/icon.png",
-                alt: "白線を跳び進む青路トワのアイコン",
-                caption: "白いところだけを踏んで、家まで帰ろう"
+                src: "Images/Games/Shiro/title-screen.png",
+                alt: "『白いとこ以外、道じゃない』のタイトル画面",
+                caption: "放課後の帰り道を始めよう"
             },
             {
                 type: "image",
                 src: "Images/Games/Shiro/gameplay.png",
-                alt: "白い道路標示をジャンプで進むゲーム画面",
-                caption: "白いところだけが安全な足場"
+                alt: "青路トワが坂道の白い道路標示へジャンプするゲーム画面",
+                caption: "走る勢いをつないで、次の白へ"
+            },
+            {
+                type: "image",
+                src: "Images/Games/Shiro/icon.png",
+                alt: "白線を跳び進む青路トワのアイコン",
+                caption: "白いところだけを踏んで、家まで帰ろう"
             },
             {
                 type: "image",
@@ -663,6 +716,17 @@ const getPrimaryPlayUrl = (game) => {
     return links.find((link) => /unityroom/i.test(link.label))?.url || game.playUrl;
 };
 
+const getAvailabilityNote = (game) => {
+    if (!game.releaseAt) {
+        return game.availabilityNote || "";
+    }
+
+    const releaseTime = Date.parse(game.releaseAt);
+    return Number.isFinite(releaseTime) && Date.now() < releaseTime
+        ? game.availabilityNote || ""
+        : game.postReleaseNote || "";
+};
+
 const parseReleaseDateValue = (release) => {
     const match = String(release).match(/(\d{4})年(\d{1,2})月/);
     if (!match) {
@@ -845,6 +909,36 @@ const createVideoSection = (game) => {
     `;
 };
 
+const createChapterSection = (game) => {
+    if (!Array.isArray(game.chapters) || !game.chapters.length) {
+        return "";
+    }
+
+    return `
+        <section id="game-chapters" class="content-section chapter-section">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">6 Chapters</p>
+                    <h2>白を追う、6つの帰り道</h2>
+                    <p class="section-description">道路の白線から家の明かりまで、話ごとにルールと風景が少しずつ変わります。</p>
+                </div>
+            </div>
+            <div class="chapter-grid">
+                ${game.chapters.map((chapter) => `
+                    <article class="chapter-card">
+                        <div class="chapter-topline">
+                            <span class="chapter-number">${escapeHtml(chapter.number)}</span>
+                            <span class="chapter-location">${escapeHtml(chapter.location)}</span>
+                        </div>
+                        <h3>${escapeHtml(chapter.title)}</h3>
+                        <p>${escapeHtml(chapter.description)}</p>
+                    </article>
+                `).join("")}
+            </div>
+        </section>
+    `;
+};
+
 const getYouTubeEmbedUrl = (url) => {
     const id = getYouTubeVideoId(url);
     return id
@@ -967,6 +1061,7 @@ const renderGameDetail = () => {
     }
 
     const mediaItems = getGameMediaItems(game);
+    const availabilityNote = getAvailabilityNote(game);
 
     root.innerHTML = `
         <section class="game-hero">
@@ -979,12 +1074,14 @@ const renderGameDetail = () => {
             </div>
             <aside class="game-summary-panel">
                 <p class="eyebrow">${escapeHtml(game.genre)}</p>
-                <h1>${escapeHtml(game.title)}</h1>
+                <h1>${Array.isArray(game.titleLines) && game.titleLines.length
+                    ? game.titleLines.map((line) => `<span class="game-title-line">${escapeHtml(line)}</span>`).join("")
+                    : escapeHtml(game.title)}</h1>
                 <p class="game-summary-tagline">${escapeHtml(game.tagline)}</p>
                 <div class="hero-actions">
                     <a class="button button-primary" href="${getPrimaryPlayUrl(game)}" target="_blank" rel="noopener noreferrer">${escapeHtml(game.playLabel)}</a>
                 </div>
-                ${game.availabilityNote ? `<p class="game-availability-note" role="note">${escapeHtml(game.availabilityNote)}</p>` : ""}
+                ${availabilityNote ? `<p class="game-availability-note" role="note">${escapeHtml(availabilityNote)}</p>` : ""}
             </aside>
         </section>
 
@@ -999,6 +1096,16 @@ const renderGameDetail = () => {
                 <article class="detail-card">
                     <h3>ゲーム紹介</h3>
                     <p>${escapeHtml(game.description)}</p>
+                    ${Array.isArray(game.facts) && game.facts.length ? `
+                        <div class="game-fact-grid" aria-label="作品情報">
+                            ${game.facts.map((fact) => `
+                                <div class="game-fact">
+                                    <span>${escapeHtml(fact.label)}</span>
+                                    <strong>${escapeHtml(fact.value)}</strong>
+                                </div>
+                            `).join("")}
+                        </div>
+                    ` : ""}
                 </article>
                 <div class="spec-grid">
                     <div class="spec-card">
@@ -1020,6 +1127,8 @@ const renderGameDetail = () => {
                 </div>
             </div>
         </section>
+
+        ${createChapterSection(game)}
 
         <section id="game-features" class="content-section">
             <div class="section-heading">
