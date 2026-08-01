@@ -26,6 +26,15 @@ const games = [
             { label: "対応操作", value: "キーボード / タッチ" },
             { label: "参加イベント", value: "unity1week「しろ」" }
         ],
+        character: {
+            name: "青路トワ",
+            reading: "あおじ・トワ",
+            role: "主人公・11歳／小学5年生",
+            image: "Images/Games/Shiro/towa-character-design-sheet-v2.png",
+            alt: "青路トワの正面、斜め、側面、背面、ランドセルと配色をまとめたキャラクター設定画",
+            description: "好奇心旺盛で、思いついたらすぐに動く小学5年生。白線や街の形から道を見つけるのが得意で、誰かが困っていると放っておけません。高いところは少し怖いけれど、平気なふりをして次の白へ跳びます。",
+            visual: "矢印のように立ち上がる青緑の髪、黄色い上着、紺色のTシャツ、黒いハイカットスニーカーとランドセルが目印です。"
+        },
         features: [
             "WASDで移動、Shiftでダッシュ。Spaceまたは左クリックですぐに跳び、走る勢いをそのままジャンプへつなげます。空中ではWASDで着地点を微調整できます。",
             "道路標示、走る車、校庭のライン引き、点滅する工事足場、立体駐車場の二つのルート、家のインターホンへと、話ごとに「白」の遊び方が変化します。",
@@ -134,6 +143,42 @@ const games = [
                 src: "Images/Games/Shiro/gameplay.png",
                 alt: "青路トワが坂道の白い道路標示へジャンプするゲーム画面",
                 caption: "走る勢いをつないで、次の白へ"
+            },
+            {
+                type: "image",
+                src: "Images/Games/Shiro/stages/stage-01-shibuya-shoto.png",
+                alt: "第1話、渋谷・松濤の坂道に白い道路標示が続くUIなしの背景画像",
+                caption: "第1話｜近道のはず — 渋谷・松濤／神泉の坂道"
+            },
+            {
+                type: "image",
+                src: "Images/Games/Shiro/stages/stage-02-nishi-shinjuku.png",
+                alt: "第2話、西新宿の大きな交差点に白線が広がるUIなしの背景画像",
+                caption: "第2話｜家、どっちだっけ？ — 西新宿"
+            },
+            {
+                type: "image",
+                src: "Images/Games/Shiro/stages/stage-03-schoolyard.png",
+                alt: "第3話、放課後の校庭に白い走路とけんけんぱが描かれたUIなしの背景画像",
+                caption: "第3話｜今日は本当に近道 — 放課後の校庭"
+            },
+            {
+                type: "image",
+                src: "Images/Games/Shiro/stages/stage-04-construction-underpass.png",
+                alt: "第4話、高架下の工事区画に途切れた白線が見えるUIなしの背景画像",
+                caption: "第4話｜工事中の近道 — 高架下・工事区画"
+            },
+            {
+                type: "image",
+                src: "Images/Games/Shiro/stages/stage-05-parking-structure.png",
+                alt: "第5話、夕暮れの立体駐車場に白い区画線が続くUIなしの背景画像",
+                caption: "第5話｜見覚えのある高さ — 立体駐車場・屋上"
+            },
+            {
+                type: "image",
+                src: "Images/Games/Shiro/stages/stage-06-home.png",
+                alt: "最終話、家の前のインターホンへ白線が続くUIなしの背景画像",
+                caption: "最終話｜ただいま — 家の前"
             },
             {
                 type: "image",
@@ -819,6 +864,7 @@ const createMediaMarkup = (item, index, isActive) => {
             <div class="media-visual"${getMediaVisualStyle(item)}>
                 <img src="${item.src}" alt="${escapeHtml(item.alt)}" loading="lazy">
             </div>
+            ${item.caption ? `<figcaption>${escapeHtml(item.caption)}</figcaption>` : ""}
         </figure>
     `;
 };
@@ -934,6 +980,36 @@ const createChapterSection = (game) => {
                         <p>${escapeHtml(chapter.description)}</p>
                     </article>
                 `).join("")}
+            </div>
+        </section>
+    `;
+};
+
+const createCharacterSection = (game) => {
+    if (!game.character) {
+        return "";
+    }
+
+    const character = game.character;
+
+    return `
+        <section id="game-character" class="content-section character-section">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">Character</p>
+                    <h2>主人公・${escapeHtml(character.name)}</h2>
+                    <p class="section-description">${escapeHtml(character.reading)}｜${escapeHtml(character.role)}</p>
+                </div>
+            </div>
+            <div class="character-layout">
+                <figure class="character-art">
+                    <img src="${character.image}" alt="${escapeHtml(character.alt)}" loading="lazy">
+                    <figcaption>${escapeHtml(character.name)} キャラクター設定画</figcaption>
+                </figure>
+                <article class="character-profile">
+                    <p>${escapeHtml(character.description)}</p>
+                    <p>${escapeHtml(character.visual)}</p>
+                </article>
             </div>
         </section>
     `;
@@ -1127,6 +1203,8 @@ const renderGameDetail = () => {
                 </div>
             </div>
         </section>
+
+        ${createCharacterSection(game)}
 
         ${createChapterSection(game)}
 
