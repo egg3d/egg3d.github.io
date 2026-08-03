@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Volley | egg 3d Studio</title>
+    <meta name="description" content="キーボード型のコートで指定キーをつなぎ、レシーブ・セット・スパイクのラリーを組み立てる開発中のタイピングバレーボールゲーム『Type Volley』。">
+    <meta name="theme-color" content="#10233f">
+    <meta property="og:title" content="Type Volley | egg 3d Studio">
+    <meta property="og:description" content="Godotで開発中のタイピングバレーボールゲーム。提供された開発中プレイ映像と、現行素材のクレジット・ライセンス情報を掲載しています。">
+    <meta property="og:url" content="https://egg3d.github.io/type-volley.html">
+    <meta property="og:image" content="https://egg3d.github.io/Images/Games/TypeVolley/type-volley-poster.jpg">
+    <meta property="og:image:width" content="1068">
+    <meta property="og:image:height" content="600">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="egg 3d Studio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@egg_3d">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/egg_3d_Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/egg_3d_Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/egg_3d_Favicon/favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="load-common.js" defer></script>
+    <script src="scripts.js" defer></script>
+</head>
+
+<body class="type-volley-page" data-page="game" data-game-slug="type-volley" data-static-game-detail="true">
+    <main class="page-shell">
+        <section class="game-hero">
+            <div class="game-media-panel">
+                <video class="type-volley-video" controls playsinline preload="metadata"
+                    poster="Images/Games/TypeVolley/type-volley-poster.jpg">
+                    <source src="Images/Games/TypeVolley/type-volley-gameplay-dev-20260803.mp4" type="video/mp4">
+                    お使いのブラウザは動画再生に対応していません。
+                </video>
+            </div>
+            <aside class="game-summary-panel">
+                <p class="development-status">DEVELOPMENT BUILD</p>
+                <h1>Type Volley</h1>
+                <p class="game-summary-tagline">キーをつないで、3タッチのラリーを組み立てる。</p>
+                <p class="game-summary-description">UnityのTypeBallプロトタイプをGodotへ移行し、キーボード入力とバレーボールのラリーを一つにした開発中のゲームです。</p>
+                <p class="game-availability-note" role="note">この映像は2026年8月3日に提供された開発中プレイ録画です。完成・発売・配信・オンライン対戦の利用開始を示すものではありません。</p>
+            </aside>
+        </section>
+
+        <section class="content-section" aria-labelledby="type-volley-about">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">About</p>
+                    <h2 id="type-volley-about">ゲーム概要</h2>
+                </div>
+            </div>
+            <div class="detail-layout">
+                <article class="detail-card">
+                    <h3>タイピングでつなぐバレーボール</h3>
+                    <p>物理キーボードをコートに見立て、画面に示される文字を入力して選手をボールの落下地点へ動かします。レシーブ、セット、スパイクの3タッチと、ラリー得点が現在の開発ビルドで確認できます。</p>
+                    <div class="game-fact-grid" aria-label="作品情報">
+                        <div class="game-fact"><span>状態</span><strong>開発中</strong></div>
+                        <div class="game-fact"><span>エンジン</span><strong>Godot 4.7</strong></div>
+                        <div class="game-fact"><span>映像</span><strong>提供された開発中録画</strong></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="type-volley-play">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">How it plays</p>
+                    <h2 id="type-volley-play">現在確認できる遊び方</h2>
+                </div>
+            </div>
+            <div class="info-grid">
+                <article class="info-card">
+                    <strong>指定キーをホールド</strong>
+                    <p>表示された文字キーを押し続けると選手が落下地点へ向かい、そのまま安全な返球につながります。</p>
+                </article>
+                <article class="info-card">
+                    <strong>接触時にリリース</strong>
+                    <p>ボール接触のタイミングでキーを離す操作は追加ボーナスです。通常のラリーに必須ではありません。</p>
+                </article>
+                <article class="info-card">
+                    <strong>3タッチで攻撃</strong>
+                    <p>RECEIVE、SET、SPIKEの順にボールをつなぎ、最後の入力品質が攻撃の狙いに反映されます。</p>
+                </article>
+                <article class="info-card">
+                    <strong>開発中の試合進行</strong>
+                    <p>CPUとのラリー、得点、セット表示は確認できます。公開版やオンライン対戦の動作はこのページでは保証していません。</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="type-volley-credits">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">Credits / Licenses</p>
+                    <h2 id="type-volley-credits">クレジットとライセンス</h2>
+                    <p class="section-description">現在のゲームと映像で使用している主な素材です。</p>
+                </div>
+            </div>
+            <div class="link-panel">
+                <p class="powered-by-stability">Powered by Stability AI</p>
+                <div class="compact-credit-list">
+                    <p><strong>制作・映像</strong><span>egg 3d Studio／ユーザー提供の開発中プレイ録画</span></p>
+                    <p><strong>背景・モデル</strong><span>Codex built-in image generation／<a href="https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html" target="_blank" rel="noopener noreferrer">Adobe Mixamo</a> Mannequin（商用ゲーム利用可・ロイヤリティフリー）</span></p>
+                    <p><strong>モーション</strong><span><a href="https://github.com/nv-tlabs/kimodo" target="_blank" rel="noopener noreferrer">NVIDIA Kimodo</a>（<a href="https://github.com/nv-tlabs/kimodo/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Apache-2.0</a>）／Kimodo-SOMA-RP-v1.1（<a href="https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/" target="_blank" rel="noopener noreferrer">NVIDIA Open Model License</a>）／Meta Llama 3 Community License</span></p>
+                    <p><strong>効果音</strong><span><a href="https://huggingface.co/stabilityai/stable-audio-3-optimized" target="_blank" rel="noopener noreferrer">Stable Audio 3 Small-SFX</a> by Stability AI（<a href="https://huggingface.co/stabilityai/stable-audio-3-optimized/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer">Community License</a>）</span></p>
+                    <p><strong>エンジン・プラグイン</strong><span><a href="https://godotengine.org/license/" target="_blank" rel="noopener noreferrer">Godot Engine</a>／<a href="https://github.com/3ddelano/epic-online-services-godot/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer">Epic Online Services Godot</a>（MIT）</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

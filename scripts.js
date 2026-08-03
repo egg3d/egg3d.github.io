@@ -1,5 +1,22 @@
 const games = [
     {
+        slug: "type-volley",
+        pageUrl: "type-volley.html",
+        cardImage: "Images/Games/TypeVolley/type-volley-poster.jpg",
+        title: "Type Volley",
+        tagline: "キーをつないで、3タッチのラリーを組み立てる。",
+        status: "制作中",
+        cardMetaLabel: "状態",
+        cardMeta: "開発中",
+        release: "2026年8月（開発中）",
+        media: [
+            {
+                src: "Images/Games/TypeVolley/type-volley-poster.jpg",
+                alt: "日本の学校体育館を背景に、キーボード型コートでラリーするType Volleyの開発中画面"
+            }
+        ]
+    },
+    {
         slug: "shiroi-toko-igai-michi-janai",
         pageUrl: "shiroi-toko-igai-michi-janai.html",
         cardImage: "Images/Games/Shiro/icon.png",
@@ -813,7 +830,7 @@ const createGameCard = (game) => {
                 <span class="game-card-title">${escapeHtml(game.title)}</span>
             </div>
             <p class="game-card-tagline">${escapeHtml(game.tagline)}</p>
-            <p class="game-card-release">公開: ${escapeHtml(game.release)}</p>
+            <p class="game-card-release">${escapeHtml(game.cardMetaLabel || "公開")}: ${escapeHtml(game.cardMeta || game.release)}</p>
         </div>
     </${cardTag}>
 `;

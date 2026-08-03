@@ -720,6 +720,79 @@ main.page-shell {
     border-radius: 12px;
 }
 
+.development-status {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin: 0 0 14px;
+    padding: 7px 12px;
+    color: #725210;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    background: #fff7d9;
+    border: 1px solid #eed38b;
+    border-radius: 999px;
+}
+
+.type-volley-video {
+    width: 100%;
+    aspect-ratio: 89 / 50;
+    display: block;
+    background: #050b16;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 24px 56px rgba(15, 35, 72, 0.16);
+}
+
+.type-volley-page .game-summary-description {
+    max-width: 46ch;
+}
+
+.type-volley-page .info-card strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.powered-by-stability {
+    width: fit-content;
+    margin: 0;
+    padding: 10px 14px;
+    color: #e5eeff;
+    font-weight: 800;
+    background: #0b1427;
+    border-radius: 999px;
+}
+
+.compact-credit-list {
+    display: grid;
+    border-top: 1px solid var(--line);
+}
+
+.compact-credit-list p {
+    display: grid;
+    grid-template-columns: minmax(140px, 0.3fr) minmax(0, 1fr);
+    gap: 16px;
+    margin: 0;
+    padding: 14px 2px;
+    border-bottom: 1px solid var(--line);
+}
+
+.compact-credit-list strong {
+    color: var(--text-dark);
+}
+
+.compact-credit-list span {
+    color: var(--text-soft);
+    line-height: 1.75;
+}
+
+.compact-credit-list a {
+    color: var(--accent);
+    font-weight: 700;
+}
+
 .game-summary-description {
     max-width: 40ch;
     margin: 0 0 24px;
@@ -1280,6 +1353,11 @@ main.page-shell {
     .game-fact-grid,
     .chapter-grid {
         grid-template-columns: 1fr;
+    }
+
+    .compact-credit-list p {
+        grid-template-columns: 1fr;
+        gap: 4px;
     }
 
     .chapter-card {
