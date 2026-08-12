@@ -1066,6 +1066,15 @@ main.page-shell {
     pointer-events: none;
 }
 
+.collection-game-piece.is-page-unavailable {
+    cursor: default;
+}
+
+.collection-game-piece.is-page-unavailable:focus-visible {
+    outline: 3px solid rgba(39, 48, 47, 0.42);
+    outline-offset: 3px;
+}
+
 .collection-game-piece:hover,
 .collection-game-piece:focus-visible,
 .collection-game-piece.is-selected {

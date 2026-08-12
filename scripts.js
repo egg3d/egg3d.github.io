@@ -228,6 +228,7 @@ const games = [
         cardDescription: "射撃の反動だけで地下避難路を守り抜く3Dアクションシューティング。",
         status: "制作中",
         isComingSoon: true,
+        pageAvailable: false,
         genre: "3D Arena Shooter",
         platforms: ["unityroom", "Google Play"],
         engine: "Godot",
@@ -977,6 +978,10 @@ const createGameCard = (game, options = {}) => {
 const createCollectionPiece = (game, index) => {
     const cardArt = gameCardArt[game.slug];
     const preview = gameCardPreviews[game.slug];
+    const pageAvailable = game.pageAvailable !== false;
+    const pieceTag = pageAvailable ? "a" : "article";
+    const pieceTarget = pageAvailable ? ` href="${game.pageUrl}"` : ' aria-disabled="true" tabindex="0"';
+    const pieceStateClass = pageAvailable ? "" : " is-page-unavailable";
     const fallbackMedia = (game.media || []).find((item) => item.type === "image")?.src
         || cardArt?.src
         || game.cardImage
@@ -991,8 +996,9 @@ const createCollectionPiece = (game, index) => {
         : "";
 
     return `
-        <a class="collection-game-piece" href="${game.pageUrl}" role="listitem"
+        <${pieceTag} class="collection-game-piece${pieceStateClass}"${pieceTarget} role="listitem"
             data-collection-piece data-game-index="${index}"
+            data-page-available="${pageAvailable}"
             data-game-title="${escapeHtml(game.title)}"
             data-game-tagline="${escapeHtml(game.tagline)}"
             data-game-engine="${escapeHtml(game.engine || "Engine未設定")}"
@@ -1001,10 +1007,10 @@ const createCollectionPiece = (game, index) => {
             data-game-release="${escapeHtml(game.isComingSoon ? "公開時期未定" : game.release)}"
             data-preview-fallback="${escapeHtml(fallbackMedia)}"
             ${previewAttributes}
-            aria-label="${escapeHtml(`${game.title}を選ぶ`)}">
+            aria-label="${escapeHtml(pageAvailable ? `${game.title}を選ぶ` : `${game.title}（紹介ページ準備中）`)}">
             <img src="${escapeHtml(cardArt?.src || game.cardImage || getCardImage(game.media[0].src))}"
                 alt="" width="640" height="640" loading="lazy">
-        </a>
+        </${pieceTag}>
     `;
 };
 
@@ -1029,7 +1035,7 @@ const renderHomePage = () => {
                             <span data-collection-platform></span>
                             <span data-collection-release></span>
                         </div>
-                        <span class="collection-preview-open">アイコンをクリックして作品ページへ →</span>
+                        <span class="collection-preview-open" data-collection-open>アイコンをクリックして作品ページへ →</span>
                     </div>
                 </div>
                 <div class="collection-piece-grid" role="list" aria-label="全ゲーム一覧">
@@ -1056,6 +1062,7 @@ const setupCollectionBrowser = () => {
     const engine = browser.querySelector("[data-collection-engine]");
     const platform = browser.querySelector("[data-collection-platform]");
     const release = browser.querySelector("[data-collection-release]");
+    const openLabel = browser.querySelector("[data-collection-open]");
     const previewLink = browser.querySelector("[data-collection-live-preview]");
     const previewHome = previewLink.parentElement;
     let activePiece;
@@ -1182,7 +1189,10 @@ const setupCollectionBrowser = () => {
         engine.textContent = piece.dataset.gameEngine || "";
         platform.textContent = piece.dataset.gamePlatform || "";
         release.textContent = piece.dataset.gameRelease || "";
-        previewLink.dataset.href = piece.href;
+        const pageAvailable = piece.dataset.pageAvailable !== "false";
+        openLabel.textContent = pageAvailable
+            ? "アイコンをクリックして作品ページへ →"
+            : "紹介ページは準備中です";
         mountMobilePreview(piece);
         positionPreview(piece);
         showPreview();
