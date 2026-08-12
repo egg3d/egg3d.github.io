@@ -769,7 +769,7 @@ const siteMeta = {
 };
 
 const gameCardArt = {
-    "type-volley": { src: "Images/Games/TypeVolley/type-volley-poster.jpg", background: "#dce7ff" },
+    "type-volley": { src: "Images/Games/Icons/type-volley.png", background: "#dce7ff" },
     "shiroi-toko-igai-michi-janai": { src: "Images/Games/Icons/shiro.png", background: "#dce7ff" },
     "recoil-survivor": { src: "Images/Games/Icons/recoil-survivor.png", background: "#fff0c4" },
     bound: { src: "Images/Games/Icons/bound.png", background: "#d9f3e4" },
