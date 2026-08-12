@@ -4,11 +4,17 @@ const games = [
         pageUrl: "type-volley.html",
         cardImage: "Images/Games/TypeVolley/type-volley-poster.jpg",
         title: "Type Volley",
+        shortTitle: "Type Volley",
         tagline: "キーをつないで、3タッチのラリーを組み立てる。",
+        description: "キーボード型のコートで指定キーをつなぎ、レシーブ・セット・スパイクのラリーを組み立てる開発中のタイピングバレーボールゲームです。",
+        cardDescription: "キー入力で3タッチのラリーを組み立てるタイピングバレーボールです。",
         status: "制作中",
+        genre: "Typing Sports",
+        platforms: ["PC"],
+        engine: "Godot 4.7",
         cardMetaLabel: "状態",
         cardMeta: "開発中",
-        release: "2026年8月（開発中）",
+        release: "開発中",
         media: [
             {
                 src: "Images/Games/TypeVolley/type-volley-poster.jpg",
@@ -225,7 +231,7 @@ const games = [
         genre: "3D Arena Shooter",
         platforms: ["unityroom", "Google Play"],
         engine: "Godot",
-        release: "2026年7月",
+        release: "公開時期未定",
         playUrl: "https://unityroom.com/games/recoil-survivor",
         playLabel: "ゲームをプレイ",
         externalLinks: [
@@ -332,7 +338,7 @@ const games = [
         cardDescription: "落ちてくる単語を打つ自由度の高いタイピングアクション",
         status: "公開中",
         genre: "Typing Action",
-        platforms: ["itch.io", "unityroom"],
+        platforms: ["itch.io", "App Store", "Google Play", "unityroom"],
         engine: "Unity",
         release: "2025年7月",
         playUrl: "https://egg-3d.itch.io/fallwords",
@@ -753,7 +759,54 @@ const games = [
 ];
 
 const siteMeta = {
-    profileName: "なまたまご"
+    studioName: "egg 3d Studio",
+    creatorName: "なまたまご",
+    featuredSlugs: [
+        "shiroi-toko-igai-michi-janai",
+        "fallwords",
+        "gumball-rush-tycoon"
+    ]
+};
+
+const gameCardArt = {
+    "type-volley": { src: "Images/Games/TypeVolley/type-volley-poster.jpg", background: "#dce7ff" },
+    "shiroi-toko-igai-michi-janai": { src: "Images/Games/Icons/shiro.png", background: "#dce7ff" },
+    "recoil-survivor": { src: "Images/Games/Icons/recoil-survivor.png", background: "#fff0c4" },
+    bound: { src: "Images/Games/Icons/bound.png", background: "#d9f3e4" },
+    fallwords: { src: "Images/Games/Icons/fallwords.png", background: "#e7ddff" },
+    infinitebatting: { src: "Images/Games/Icons/infinite-batting.png", background: "#d9f3e4" },
+    "6arapon": { src: "Images/Games/Icons/6arapon.png", background: "#dce7ff" },
+    bombtype: { src: "Images/Games/Icons/bombtype.png", background: "#fff0c4" },
+    "tone-compare": { src: "Images/Games/Icons/tone-compare.png", background: "#e7ddff" },
+    canyougravity: { src: "Images/Games/Icons/can-you-gravity.png", background: "#e7ddff" },
+    "one-more-piece": { src: "Images/Games/Icons/one-more-piece.png", background: "#dce7ff" },
+    "roblox-voxel-dodge": { src: "Images/Games/Icons/voxel-dodge.png", background: "#dce7ff" },
+    "gumball-rush-tycoon": { src: "Images/Games/Icons/gumball-rush.png", background: "#fff0c4" },
+    "odd-reversi-stone-battle": { src: "Images/Games/Icons/odd-reversi.png", background: "#e7ddff" }
+};
+
+const gameCardPreviews = {
+    "type-volley": { type: "image", src: "Images/Games/TypeVolley/type-volley-poster.jpg" },
+    "shiroi-toko-igai-michi-janai": {
+        type: "slideshow",
+        sources: [
+            "Images/Games/Shiro/gameplay.png",
+            "Images/Games/Shiro/stages/stage-03-schoolyard.png",
+            "Images/Games/Shiro/stages/stage-05-parking-structure.png"
+        ]
+    },
+    "recoil-survivor": { type: "image", src: "Images/Games/RecoilSurvivor.gif" },
+    bound: { type: "youtube", id: "-gTMPMWtRuk" },
+    fallwords: { type: "image", src: "Images/Games/FallWords.gif" },
+    infinitebatting: { type: "image", src: "Images/Games/InfiniteBatting.gif" },
+    "6arapon": { type: "image", src: "Images/Games/6ARAPON.gif" },
+    bombtype: { type: "image", src: "Images/Games/BombType.gif" },
+    "tone-compare": { type: "image", src: "Images/Games/ToneCompare.gif" },
+    canyougravity: { type: "image", src: "Images/Games/CanYouGravity.gif" },
+    "one-more-piece": { type: "image", src: "Images/Games/OneMorePiece.gif" },
+    "roblox-voxel-dodge": { type: "image", src: "Images/Games/RobloxVoxelDodge.png" },
+    "gumball-rush-tycoon": { type: "youtube", id: "3G_C4K7geg0" },
+    "odd-reversi-stone-battle": { type: "youtube", id: "utMJWXE7Bf4" }
 };
 
 const escapeHtml = (value) =>
@@ -766,6 +819,16 @@ const escapeHtml = (value) =>
 
 const createPlatformBadges = (platforms) =>
     platforms.map((platform) => `<span class="pill">${escapeHtml(platform)}</span>`).join("");
+
+const getCompactPlatformLabel = (platforms) => {
+    if (!Array.isArray(platforms) || !platforms.length) {
+        return "公開先未定";
+    }
+
+    return platforms.length === 1
+        ? platforms[0]
+        : `${platforms[0]} +${platforms.length - 1}`;
+};
 
 const getPrimaryPlayUrl = (game) => {
     const links = Array.isArray(game.externalLinks) ? game.externalLinks : [];
@@ -789,6 +852,17 @@ const getAvailabilityNote = (game) => {
         : game.postReleaseNote || "";
 };
 
+const getDisplayStatus = (game) => {
+    if (game.releaseAt) {
+        const releaseTime = Date.parse(game.releaseAt);
+        if (Number.isFinite(releaseTime) && Date.now() >= releaseTime) {
+            return "公開中";
+        }
+    }
+
+    return game.status || (game.isComingSoon ? "制作中" : "公開中");
+};
+
 const parseReleaseDateValue = (release) => {
     const match = String(release).match(/(\d{4})年(\d{1,2})月/);
     if (!match) {
@@ -810,19 +884,76 @@ const getCardImage = (source) => {
     return `Images/Games/Cards/${slug}.webp`;
 };
 
-const createGameCard = (game) => {
+const getStudioStats = () => [
+    {
+        value: String(games.length),
+        label: "掲載タイトル"
+    },
+    {
+        value: String(new Set(games.map((game) => game.engine).filter(Boolean)).size),
+        label: "開発環境"
+    },
+    {
+        value: String(new Set(games.flatMap((game) => game.platforms || [])).size),
+        label: "公開プラットフォーム"
+    }
+];
+
+const renderStudioStats = () => {
+    const markup = getStudioStats().map((stat) => `
+        <div class="studio-stat">
+            <strong>${escapeHtml(stat.value)}</strong>
+            <span>${escapeHtml(stat.label)}</span>
+        </div>
+    `).join("");
+
+    document.querySelectorAll("[data-studio-stats]").forEach((root) => {
+        root.innerHTML = markup;
+    });
+};
+
+const createGameCard = (game, options = {}) => {
     const cardTag = game.isComingSoon ? "article" : "a";
+    const cardClasses = ["game-card"];
+    if (game.isComingSoon) {
+        cardClasses.push("game-card-coming-soon");
+    }
+    if (options.featured) {
+        cardClasses.push("game-card-featured");
+    }
     const cardAttributes = game.isComingSoon
-        ? 'class="game-card game-card-coming-soon" aria-label="' + escapeHtml(`${game.title}（準備中）`) + '"'
-        : `class="game-card" href="${game.pageUrl}"`;
+        ? `class="${cardClasses.join(" ")}" aria-label="${escapeHtml(`${game.title}（準備中）`)}"`
+        : `class="${cardClasses.join(" ")}" href="${game.pageUrl}"`;
     const comingSoonBadge = game.isComingSoon
         ? '<span class="game-card-status"><span aria-hidden="true">⌛</span> 準備中</span>'
+        : "";
+    const displayStatus = getDisplayStatus(game);
+    const statusClass = displayStatus === "公開中" ? "is-live" : "is-progress";
+    const releaseLabel = game.isComingSoon ? "公開時期未定" : game.release;
+    const cardArt = gameCardArt[game.slug];
+    const cardImage = cardArt?.src || game.cardImage || getCardImage(game.media[0].src);
+    const cardImageAlt = cardArt
+        ? `${game.title}のゲーム内容を表す卓上ミニチュア風アイコン`
+        : game.media[0].alt;
+    const cardArtStyle = cardArt ? ` style="--game-card-art-bg: ${cardArt.background}"` : "";
+    const preview = gameCardPreviews[game.slug];
+    const previewAttributes = preview
+        ? [
+            `data-preview-type="${escapeHtml(preview.type)}"`,
+            preview.src ? `data-preview-src="${escapeHtml(preview.src)}"` : "",
+            preview.id ? `data-preview-youtube-id="${escapeHtml(preview.id)}"` : "",
+            preview.sources ? `data-preview-sources="${escapeHtml(preview.sources.join("|"))}"` : ""
+        ].filter(Boolean).join(" ")
+        : "";
+    const previewMarkup = preview
+        ? `<div class="game-card-preview" ${previewAttributes} aria-hidden="true"><span class="game-card-preview-badge"><span aria-hidden="true"></span> Preview</span></div>`
         : "";
 
     return `
     <${cardTag} ${cardAttributes}>
-        <div class="game-card-media">
-            <img src="${game.cardImage || getCardImage(game.media[0].src)}" alt="${escapeHtml(game.media[0].alt)}" width="256" height="256" loading="lazy">
+        <div class="game-card-media"${cardArtStyle}>
+            <img class="game-card-icon" src="${escapeHtml(cardImage)}" alt="${escapeHtml(cardImageAlt)}" width="640" height="640" loading="lazy">
+            ${previewMarkup}
             ${comingSoonBadge}
         </div>
         <div class="game-card-body">
@@ -830,10 +961,51 @@ const createGameCard = (game) => {
                 <span class="game-card-title">${escapeHtml(game.title)}</span>
             </div>
             <p class="game-card-tagline">${escapeHtml(game.tagline)}</p>
-            <p class="game-card-release">${escapeHtml(game.cardMetaLabel || "公開")}: ${escapeHtml(game.cardMeta || game.release)}</p>
+            <div class="game-card-meta" aria-label="開発環境と公開先">
+                <span>${escapeHtml(game.engine || "Engine未設定")}</span>
+                <span>${escapeHtml(getCompactPlatformLabel(game.platforms))}</span>
+            </div>
+            <div class="game-card-footer">
+                <span class="game-card-state ${statusClass}">${escapeHtml(displayStatus)}</span>
+                <span class="game-card-release">${escapeHtml(releaseLabel)}</span>
+            </div>
         </div>
     </${cardTag}>
 `;
+};
+
+const createCollectionPiece = (game, index) => {
+    const cardArt = gameCardArt[game.slug];
+    const preview = gameCardPreviews[game.slug];
+    const fallbackMedia = (game.media || []).find((item) => item.type === "image")?.src
+        || cardArt?.src
+        || game.cardImage
+        || getCardImage(game.media[0].src);
+    const previewAttributes = preview
+        ? [
+            `data-preview-type="${escapeHtml(preview.type)}"`,
+            preview.src ? `data-preview-src="${escapeHtml(preview.src)}"` : "",
+            preview.id ? `data-preview-youtube-id="${escapeHtml(preview.id)}"` : "",
+            preview.sources ? `data-preview-sources="${escapeHtml(preview.sources.join("|"))}"` : ""
+        ].filter(Boolean).join(" ")
+        : "";
+
+    return `
+        <a class="collection-game-piece" href="${game.pageUrl}" role="listitem"
+            data-collection-piece data-game-index="${index}"
+            data-game-title="${escapeHtml(game.title)}"
+            data-game-tagline="${escapeHtml(game.tagline)}"
+            data-game-engine="${escapeHtml(game.engine || "Engine未設定")}"
+            data-game-platform="${escapeHtml(getCompactPlatformLabel(game.platforms))}"
+            data-game-status="${escapeHtml(getDisplayStatus(game))}"
+            data-game-release="${escapeHtml(game.isComingSoon ? "公開時期未定" : game.release)}"
+            data-preview-fallback="${escapeHtml(fallbackMedia)}"
+            ${previewAttributes}
+            aria-label="${escapeHtml(`${game.title}を選ぶ`)}">
+            <img src="${escapeHtml(cardArt?.src || game.cardImage || getCardImage(game.media[0].src))}"
+                alt="" width="640" height="640" loading="lazy">
+        </a>
+    `;
 };
 
 const renderHomePage = () => {
@@ -845,19 +1017,441 @@ const renderHomePage = () => {
     }
 
     shelves.innerHTML = `
-        <section class="content-section shelf-section shelf-grid">
-            <div class="section-heading">
-                <div>
-                    <p class="section-kicker">All Works</p>
-                    <h2>作品一覧</h2>
-                    <p class="section-description"></p>
+        <section id="game-collection" class="content-section shelf-section collection-section">
+            <div class="collection-browser" data-collection-browser>
+                <div class="collection-live-preview" data-collection-live-preview aria-live="polite" aria-hidden="true" role="status">
+                    <div class="collection-preview-visual" data-collection-preview-visual></div>
+                    <div class="collection-preview-info">
+                        <h3 data-collection-title></h3>
+                        <p class="collection-preview-tagline" data-collection-tagline></p>
+                        <div class="collection-preview-meta" aria-label="作品情報">
+                            <span data-collection-engine></span>
+                            <span data-collection-platform></span>
+                            <span data-collection-release></span>
+                        </div>
+                        <span class="collection-preview-open">アイコンをクリックして作品ページへ →</span>
+                    </div>
                 </div>
-            </div>
-            <div class="game-grid">
-                ${sortedGames.map((game) => createGameCard(game)).join("")}
+                <div class="collection-piece-grid" role="list" aria-label="全ゲーム一覧">
+                    ${sortedGames.map((game, index) => createCollectionPiece(game, index)).join("")}
+                </div>
             </div>
         </section>
     `;
+
+    setupCollectionBrowser();
+};
+
+const setupCollectionBrowser = () => {
+    const browser = document.querySelector("[data-collection-browser]");
+    if (!browser) {
+        return;
+    }
+
+    const pieces = Array.from(browser.querySelectorAll("[data-collection-piece]"));
+    const track = browser.querySelector(".collection-piece-grid");
+    const visual = browser.querySelector("[data-collection-preview-visual]");
+    const title = browser.querySelector("[data-collection-title]");
+    const tagline = browser.querySelector("[data-collection-tagline]");
+    const engine = browser.querySelector("[data-collection-engine]");
+    const platform = browser.querySelector("[data-collection-platform]");
+    const release = browser.querySelector("[data-collection-release]");
+    const previewLink = browser.querySelector("[data-collection-live-preview]");
+    const previewHome = previewLink.parentElement;
+    let activePiece;
+    let scrollFrame;
+    let activationTimer;
+    let hideTimer;
+
+    if (!pieces.length || !track || !visual || !previewLink) {
+        return;
+    }
+
+    const clearVisual = () => {
+        visual.replaceChildren();
+        visual.classList.remove("is-loading", "is-unavailable");
+    };
+
+    const buildVisual = (piece) => {
+        clearVisual();
+        const type = piece.dataset.previewType;
+        const sources = type === "slideshow"
+            ? (piece.dataset.previewSources || "").split("|").filter(Boolean)
+            : [piece.dataset.previewSrc, piece.dataset.previewFallback].filter(Boolean);
+        const image = document.createElement("img");
+        image.alt = `${piece.dataset.gameTitle}のゲーム画面`;
+        image.decoding = "async";
+        const uniqueSources = [...new Set([
+            ...sources,
+            piece.dataset.previewFallback,
+            piece.querySelector("img")?.src
+        ].filter(Boolean))];
+        let sourceIndex = 0;
+        visual.classList.add("is-loading");
+        image.addEventListener("load", () => {
+            visual.classList.remove("is-loading", "is-unavailable");
+        });
+        image.addEventListener("error", () => {
+            sourceIndex += 1;
+            if (uniqueSources[sourceIndex]) {
+                image.src = uniqueSources[sourceIndex];
+                return;
+            }
+            visual.classList.remove("is-loading");
+            visual.classList.add("is-unavailable");
+            image.remove();
+        });
+        visual.append(image);
+        if (uniqueSources[0]) {
+            image.src = uniqueSources[0];
+        } else {
+            visual.classList.remove("is-loading");
+            visual.classList.add("is-unavailable");
+        }
+    };
+
+    const showPreview = () => {
+        previewLink.classList.add("is-visible");
+        previewLink.setAttribute("aria-hidden", "false");
+    };
+
+    const hidePreview = () => {
+        previewLink.classList.remove("is-visible");
+        previewLink.setAttribute("aria-hidden", "true");
+    };
+
+    const mountMobilePreview = (piece) => {
+        if (!window.matchMedia("(max-width: 760px)").matches || previewLink.parentElement === piece) {
+            return;
+        }
+        piece.append(previewLink);
+    };
+
+    const positionPreview = (piece) => {
+        if (window.matchMedia("(max-width: 760px)").matches) {
+            previewLink.style.removeProperty("--preview-x");
+            previewLink.style.removeProperty("--preview-y");
+            return;
+        }
+        if (previewLink.parentElement !== previewHome) {
+            previewHome.insertBefore(previewLink, track);
+        }
+        window.requestAnimationFrame(() => {
+            const browserRect = browser.getBoundingClientRect();
+            const pieceRect = piece.getBoundingClientRect();
+            const previewRect = previewLink.getBoundingClientRect();
+            const gap = 14;
+            const margin = 8;
+            const centeredX = pieceRect.left - browserRect.left
+                + pieceRect.width / 2 - previewRect.width / 2;
+            const x = Math.max(margin, Math.min(
+                browserRect.width - previewRect.width - margin,
+                centeredX
+            ));
+            const above = pieceRect.top - browserRect.top - previewRect.height - gap;
+            const below = pieceRect.bottom - browserRect.top + gap;
+            const preferredY = above >= margin ? above : below;
+            const y = Math.max(margin, Math.min(
+                browserRect.height - previewRect.height - margin,
+                preferredY
+            ));
+            previewLink.style.setProperty("--preview-x", `${x}px`);
+            previewLink.style.setProperty("--preview-y", `${y}px`);
+        });
+    };
+
+    const activate = (piece) => {
+        if (!piece) {
+            return;
+        }
+        if (piece === activePiece) {
+            mountMobilePreview(piece);
+            positionPreview(piece);
+            showPreview();
+            return;
+        }
+        activePiece = piece;
+        pieces.forEach((candidate) => {
+            const selected = candidate === piece;
+            candidate.classList.toggle("is-selected", selected);
+            candidate.setAttribute("aria-current", selected ? "true" : "false");
+        });
+        buildVisual(piece);
+        title.textContent = piece.dataset.gameTitle || "";
+        tagline.textContent = piece.dataset.gameTagline || "";
+        engine.textContent = piece.dataset.gameEngine || "";
+        platform.textContent = piece.dataset.gamePlatform || "";
+        release.textContent = piece.dataset.gameRelease || "";
+        previewLink.dataset.href = piece.href;
+        mountMobilePreview(piece);
+        positionPreview(piece);
+        showPreview();
+    };
+
+    const scheduleActivation = (piece, delay = 90) => {
+        window.clearTimeout(hideTimer);
+        window.clearTimeout(activationTimer);
+        activationTimer = window.setTimeout(() => activate(piece), delay);
+    };
+
+    pieces.forEach((piece) => {
+        piece.addEventListener("mouseenter", () => scheduleActivation(piece));
+        piece.addEventListener("focus", () => activate(piece));
+        piece.addEventListener("mouseleave", () => {
+            if (!window.matchMedia("(max-width: 760px)").matches) {
+                hideTimer = window.setTimeout(hidePreview, 220);
+            }
+        });
+    });
+
+    pieces.forEach((piece) => {
+        const sources = [
+            piece.dataset.previewSrc,
+            piece.dataset.previewFallback,
+            ...(piece.dataset.previewSources || "").split("|")
+        ].filter(Boolean);
+        sources.forEach((source) => {
+            const preload = new Image();
+            preload.src = source;
+        });
+    });
+
+    browser.addEventListener("mouseleave", () => {
+        if (!window.matchMedia("(max-width: 760px)").matches && !browser.contains(document.activeElement)) {
+            hidePreview();
+        }
+    });
+    browser.addEventListener("focusout", () => {
+        window.setTimeout(() => {
+            if (!browser.matches(":hover") && !browser.contains(document.activeElement)) {
+                hidePreview();
+            }
+        }, 0);
+    });
+
+    const activateNearestToCenter = () => {
+        const center = window.innerHeight * 0.52;
+        const visiblePieces = pieces.filter((piece) => {
+            const rect = piece.getBoundingClientRect();
+            return rect.bottom > 120 && rect.top < window.innerHeight;
+        });
+        const nearest = visiblePieces.reduce((best, piece) => {
+            const rect = piece.getBoundingClientRect();
+            const distance = Math.abs(rect.top + rect.height / 2 - center);
+            return !best || distance < best.distance ? { piece, distance } : best;
+        }, null);
+        activate(nearest?.piece);
+    };
+
+    window.addEventListener("scroll", () => {
+        if (!window.matchMedia("(max-width: 760px)").matches) {
+            return;
+        }
+        window.cancelAnimationFrame(scrollFrame);
+        scrollFrame = window.requestAnimationFrame(activateNearestToCenter);
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+        if (!window.matchMedia("(max-width: 760px)").matches) {
+            if (activePiece) {
+                positionPreview(activePiece);
+            }
+            return;
+        }
+        window.cancelAnimationFrame(scrollFrame);
+        scrollFrame = window.requestAnimationFrame(activateNearestToCenter);
+    }, { passive: true });
+
+    if (window.matchMedia("(max-width: 760px)").matches) {
+        window.requestAnimationFrame(activateNearestToCenter);
+    }
+};
+
+const setupGameCardPreviews = () => {
+    const cards = Array.from(document.querySelectorAll(".game-card"));
+    const startTimers = new WeakMap();
+    const slideTimers = new WeakMap();
+
+    const clearSlideTimer = (card) => {
+        const timer = slideTimers.get(card);
+        if (timer) {
+            window.clearInterval(timer);
+            slideTimers.delete(card);
+        }
+    };
+
+    const stopPreview = (card) => {
+        const startTimer = startTimers.get(card);
+        if (startTimer) {
+            window.clearTimeout(startTimer);
+            startTimers.delete(card);
+        }
+        clearSlideTimer(card);
+        const preview = card.querySelector(".game-card-preview");
+        if (!preview) {
+            return;
+        }
+        card.classList.remove("is-previewing");
+        const frame = preview.querySelector("iframe");
+        if (frame) {
+            frame.remove();
+        }
+        const image = preview.querySelector("img");
+        if (image) {
+            image.remove();
+        }
+    };
+
+    const startPreview = (card) => {
+        const preview = card.querySelector(".game-card-preview");
+        if (!preview || card.classList.contains("is-previewing")) {
+            return;
+        }
+        const type = preview.dataset.previewType;
+        if (type === "youtube" && preview.dataset.previewYoutubeId) {
+            const videoId = preview.dataset.previewYoutubeId;
+            const frame = document.createElement("iframe");
+            frame.title = "ゲーム紹介動画プレビュー";
+            frame.tabIndex = -1;
+            frame.allow = "autoplay; encrypted-media; picture-in-picture";
+            frame.referrerPolicy = "strict-origin-when-cross-origin";
+            frame.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&mute=1&controls=0&disablekb=1&loop=1&playlist=${encodeURIComponent(videoId)}&playsinline=1&rel=0`;
+            preview.prepend(frame);
+        } else {
+            const sources = type === "slideshow"
+                ? (preview.dataset.previewSources || "").split("|").filter(Boolean)
+                : [preview.dataset.previewSrc].filter(Boolean);
+            if (!sources.length) {
+                return;
+            }
+            const image = document.createElement("img");
+            image.alt = "";
+            image.decoding = "async";
+            image.src = sources[0];
+            preview.prepend(image);
+            if (sources.length > 1 && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                let slideIndex = 0;
+                const timer = window.setInterval(() => {
+                    slideIndex = (slideIndex + 1) % sources.length;
+                    image.src = sources[slideIndex];
+                }, 1400);
+                slideTimers.set(card, timer);
+            }
+        }
+        card.classList.add("is-previewing");
+    };
+
+    const schedulePreview = (card, delay = 320) => {
+        const existingTimer = startTimers.get(card);
+        if (existingTimer) {
+            window.clearTimeout(existingTimer);
+        }
+        const timer = window.setTimeout(() => {
+            startTimers.delete(card);
+            startPreview(card);
+        }, delay);
+        startTimers.set(card, timer);
+    };
+
+    cards.forEach((card) => {
+        if (!card.querySelector(".game-card-preview")) {
+            return;
+        }
+        card.addEventListener("mouseenter", () => schedulePreview(card));
+        card.addEventListener("mouseleave", () => {
+            if (!card.contains(document.activeElement)) {
+                stopPreview(card);
+            }
+        });
+        card.addEventListener("focusin", () => schedulePreview(card, 0));
+        card.addEventListener("focusout", () => {
+            window.setTimeout(() => {
+                if (!card.matches(":hover") && !card.contains(document.activeElement)) {
+                    stopPreview(card);
+                }
+            }, 0);
+        });
+    });
+
+    if (window.matchMedia("(hover: none)").matches && "IntersectionObserver" in window) {
+        const featuredCards = cards.filter((card) => card.classList.contains("game-card-featured"));
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.intersectionRatio >= 0.72) {
+                    featuredCards.forEach((card) => {
+                        if (card !== entry.target) {
+                            stopPreview(card);
+                        }
+                    });
+                    schedulePreview(entry.target, 700);
+                } else {
+                    stopPreview(entry.target);
+                }
+            });
+        }, { threshold: [0, 0.72] });
+        featuredCards.forEach((card) => observer.observe(card));
+    }
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            cards.forEach(stopPreview);
+        }
+    });
+};
+
+const setupFeaturedCarousel = () => {
+    const viewport = document.querySelector(".featured-grid");
+    const cards = Array.from(viewport?.querySelectorAll(".game-card") || []);
+    const previousButton = document.querySelector('[data-featured-action="prev"]');
+    const nextButton = document.querySelector('[data-featured-action="next"]');
+    const currentLabel = document.querySelector("[data-featured-current]");
+
+    if (!viewport || !cards.length || !previousButton || !nextButton || !currentLabel) {
+        return;
+    }
+
+    let activeIndex = 0;
+    let scrollFrame;
+
+    const getCardLeft = (card) =>
+        card.getBoundingClientRect().left - viewport.getBoundingClientRect().left + viewport.scrollLeft;
+
+    const updateControls = (nextIndex) => {
+        activeIndex = Math.max(0, Math.min(cards.length - 1, nextIndex));
+        currentLabel.textContent = String(activeIndex + 1);
+        previousButton.disabled = activeIndex === 0;
+        nextButton.disabled = activeIndex === cards.length - 1;
+    };
+
+    const scrollToCard = (nextIndex) => {
+        const boundedIndex = Math.max(0, Math.min(cards.length - 1, nextIndex));
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        viewport.scrollTo({
+            left: getCardLeft(cards[boundedIndex]),
+            behavior: reduceMotion ? "auto" : "smooth"
+        });
+        updateControls(boundedIndex);
+    };
+
+    previousButton.addEventListener("click", () => scrollToCard(activeIndex - 1));
+    nextButton.addEventListener("click", () => scrollToCard(activeIndex + 1));
+
+    viewport.addEventListener("scroll", () => {
+        if (scrollFrame) {
+            window.cancelAnimationFrame(scrollFrame);
+        }
+
+        scrollFrame = window.requestAnimationFrame(() => {
+            const nearestIndex = cards.reduce((nearest, card, index) => {
+                const currentDistance = Math.abs(getCardLeft(card) - viewport.scrollLeft);
+                const nearestDistance = Math.abs(getCardLeft(cards[nearest]) - viewport.scrollLeft);
+                return currentDistance < nearestDistance ? index : nearest;
+            }, 0);
+            updateControls(nearestIndex);
+        });
+    }, { passive: true });
+
+    updateControls(0);
 };
 
 const getMediaVisualStyle = (item) =>
@@ -1069,6 +1663,8 @@ const createVideoEmbedMarkup = (item, title, useVideoFrameClass = false) => {
             class="${frameClass}"
             src="${item.embedUrl}"
             title="${escapeHtml(title)}"
+            width="1280"
+            height="720"
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
@@ -1122,7 +1718,7 @@ const getGameMediaItems = (game) => {
     const videoItem = getVideoMediaItem(game);
 
     if (videoItem) {
-        items.unshift(videoItem);
+        items.push(videoItem);
     }
 
     return items;
@@ -1155,6 +1751,10 @@ const renderGameDetail = () => {
 
     const mediaItems = getGameMediaItems(game);
     const availabilityNote = getAvailabilityNote(game);
+    const displayStatus = getDisplayStatus(game);
+    const statusDetail = game.isComingSoon
+        ? displayStatus
+        : `${displayStatus}（${game.release}）`;
 
     root.innerHTML = `
         <section class="game-hero">
@@ -1171,6 +1771,10 @@ const renderGameDetail = () => {
                     ? game.titleLines.map((line) => `<span class="game-title-line">${escapeHtml(line)}</span>`).join("")
                     : escapeHtml(game.title)}</h1>
                 <p class="game-summary-tagline">${escapeHtml(game.tagline)}</p>
+                <div class="pill-row game-summary-pills" aria-label="開発環境と公開先">
+                    <span class="pill">${escapeHtml(game.engine || "Engine未設定")}</span>
+                    ${createPlatformBadges(game.platforms || [])}
+                </div>
                 <div class="hero-actions">
                     <a class="button button-primary" href="${getPrimaryPlayUrl(game)}" target="_blank" rel="noopener noreferrer">${escapeHtml(game.playLabel)}</a>
                 </div>
@@ -1202,20 +1806,20 @@ const renderGameDetail = () => {
                 </article>
                 <div class="spec-grid">
                     <div class="spec-card">
-                        <span class="spec-label">ジャンル</span>
-                        <span class="spec-value">${escapeHtml(game.genre)}</span>
+                        <span class="spec-label">開発環境</span>
+                        <span class="spec-value">${escapeHtml(game.engine || "未設定")}</span>
                     </div>
                     <div class="spec-card">
-                        <span class="spec-label">公開年</span>
-                        <span class="spec-value">${escapeHtml(game.release)}</span>
+                        <span class="spec-label">公開先</span>
+                        <span class="spec-value">${escapeHtml((game.platforms || []).join(" / ") || "未定")}</span>
                     </div>
                     <div class="spec-card">
-                        <span class="spec-label">作者</span>
-                        <span class="spec-value">${escapeHtml(siteMeta.profileName)}</span>
+                        <span class="spec-label">公開状況</span>
+                        <span class="spec-value">${escapeHtml(statusDetail)}</span>
                     </div>
                     <div class="spec-card">
-                        <span class="spec-label">プレイ方法</span>
-                        <span class="spec-value">外部の公開ページから遊べます</span>
+                        <span class="spec-label">企画・開発</span>
+                        <span class="spec-value">${escapeHtml(siteMeta.studioName)}</span>
                     </div>
                 </div>
             </div>
@@ -1527,8 +2131,12 @@ const addGameStructuredData = () => {
         applicationCategory: "Game",
         operatingSystem: "Web",
         author: {
-            "@type": "Person",
-            name: siteMeta.profileName
+            "@type": "Organization",
+            name: siteMeta.studioName,
+            founder: {
+                "@type": "Person",
+                name: siteMeta.creatorName
+            }
         },
         sameAs: game.externalLinks.map((link) => link.url)
     };
@@ -1540,6 +2148,7 @@ const addGameStructuredData = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     addGameStructuredData();
+    renderStudioStats();
     renderHomePage();
     renderGameDetail();
 });

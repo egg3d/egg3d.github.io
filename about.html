@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>なまたまごについて | ゲームポートフォリオ</title>
-    <meta name="description" content="なまたまごの自己紹介ページ。制作スタイル、SNSや配信先へのリンクをまとめています。">
-    <meta property="og:title" content="なまたまごについて">
-    <meta property="og:description" content="個人でゲームを作る、なまたまごのプロフィールページです。">
+    <title>なまたまごについて | egg 3d Studio</title>
+    <meta name="description" content="egg 3d Studio代表／ゲーム開発者・なまたまごのプロフィール。開発実績、担当領域、制作スタイル、公開先、問い合わせ先を紹介しています。">
+    <meta property="og:title" content="なまたまごについて | egg 3d Studio">
+    <meta property="og:description" content="egg 3d Studio代表／ゲーム開発者・なまたまごのプロフィールです。">
     <meta property="og:url" content="https://egg3d.github.io/about.html">
-    <meta property="og:image" content="https://egg3d.github.io/Images/Site/egg_3d.jpg">
+    <meta property="og:image" content="https://egg3d.github.io/Images/Site/namatamago-icon.png">
     <meta property="og:type" content="profile">
-    <meta property="og:site_name" content="なまたまご">
+    <meta property="og:site_name" content="egg 3d Studio">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@egg_3d">
     <link rel="apple-touch-icon" sizes="180x180" href="Images/egg_3d_Favicon/apple-touch-icon.png">
@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="load-common.js" defer></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body data-page="about">
     <main class="page-shell">
@@ -29,9 +30,10 @@
             <div class="about-copy">
                 <p class="eyebrow">Profile</p>
                 <h1>なまたまご</h1>
+                <p class="profile-role">egg 3d Studio代表／ゲーム開発者</p>
                 <p class="hero-description">
-                    個人でゲームを作っています。アクション、タイピング、テンポ感のある作品が好きです。
-                    Unity を中心に、企画、実装、3D、UI、公開まわりまでまとめて進めています。
+                    Godot・Unity・Robloxで、スマートフォン・PC・Web向けゲームを企画・開発・公開しています。
+                    アクション、タイピング、テンポ感のある作品が好きです。
                 </p>
                 <div class="hero-actions">
                     <a class="button button-primary" href="index.html">作品一覧へ戻る</a>
@@ -39,7 +41,49 @@
                 </div>
             </div>
             <div class="about-avatar-card">
-                <img src="Images/Site/egg_3d.jpg" alt="なまたまごのプロフィール画像" class="about-avatar">
+                <img src="Images/Site/namatamago-icon.png" alt="なまたまごの白磁の卵プロフィール画像" class="about-avatar">
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">Track Record</p>
+                    <h2>開発実績</h2>
+                    <p class="section-description">Unity・Godot・Roblox Studioを使い、遊べる形まで仕上げて公開しています。</p>
+                </div>
+            </div>
+            <div class="studio-stats studio-stats-light" data-studio-stats aria-label="egg 3d Studioの活動実績"></div>
+        </section>
+
+        <section class="content-section">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">What I Do</p>
+                    <h2>担当領域</h2>
+                </div>
+            </div>
+            <div class="info-grid expertise-grid">
+                <article class="info-card">
+                    <p class="info-card-label">Game Design</p>
+                    <h3>企画・プロトタイプ</h3>
+                    <p>操作した瞬間に面白さが伝わる遊びを考え、短い試作からゲームの核を固めます。</p>
+                </article>
+                <article class="info-card">
+                    <p class="info-card-label">Development</p>
+                    <h3>ゲーム実装</h3>
+                    <p>プレイヤー操作、ゲーム進行、敵やステージ、セーブ、ランキングなどを実装します。</p>
+                </article>
+                <article class="info-card">
+                    <p class="info-card-label">Presentation</p>
+                    <h3>3D・UI・演出</h3>
+                    <p>ゲームのルールが自然に伝わる画面構成、3D表現、アニメーション、手触りを整えます。</p>
+                </article>
+                <article class="info-card">
+                    <p class="info-card-label">Release</p>
+                    <h3>公開・運営</h3>
+                    <p>Web、スマートフォン、PC向けの公開準備、ストア掲載、公開後の改善まで進めます。</p>
+                </article>
             </div>
         </section>
 
@@ -52,8 +96,8 @@
             </div>
             <div class="info-grid">
                 <article class="info-card">
-                    <h3>ひとりで最後まで作る</h3>
-                    <p>企画、実装、見た目、ストア掲載まで一貫して組み立てるのが基本です。短いループで試して、体感の気持ちよさを優先して磨きます。</p>
+                    <h3>企画から公開まで一貫して開発</h3>
+                    <p>企画、実装、3D、UI、ストア掲載まで一貫して組み立てます。短いループで試し、遊びの核となる体験を磨きます。</p>
                 </article>
                 <article class="info-card">
                     <h3>触って分かる気持ちよさを重視</h3>
@@ -94,6 +138,23 @@
                         <a class="social-link" href="https://plicy.net/User/130120" target="_blank" rel="noopener noreferrer"><span>PLiCy</span></a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section contact-section">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">Contact</p>
+                    <h2>お問い合わせ</h2>
+                    <p class="section-description">作品掲載、取材、ゲームに関するご連絡はメールで受け付けています。</p>
+                </div>
+            </div>
+            <div class="contact-panel">
+                <div>
+                    <h3>egg 3d Studioへのご連絡</h3>
+                    <p>内容を確認のうえ、必要に応じて返信します。</p>
+                </div>
+                <a class="button button-primary" href="mailto:egg3dcg@gmail.com">メールで問い合わせる</a>
             </div>
         </section>
     </main>
