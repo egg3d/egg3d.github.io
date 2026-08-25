@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALLERIA Local Worker</title>
+    <meta name="description" content="GALLERIA Local Worker is a private desktop automation tool that reads a narrowly defined Gmail queue with read-only access.">
+    <meta property="og:title" content="GALLERIA Local Worker">
+    <meta property="og:description" content="Private, local-first Gmail queue automation with read-only access.">
+    <meta property="og:url" content="https://egg3d.github.io/galleria-local-worker/">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Images/egg_3d_Favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="./" aria-label="GALLERIA Local Worker home">GALLERIA Local Worker</a>
+        <nav aria-label="Primary navigation">
+            <a href="./privacy/">Privacy Policy</a>
+            <a href="https://egg3d.github.io/">egg 3d Studio</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <p class="eyebrow">Private desktop automation</p>
+            <h1>Local-first Gmail queue processing for one trusted operator.</h1>
+            <p class="lead">
+                GALLERIA Local Worker runs on the owner's Windows PC. Its Gmail Secondary Queue integration uses
+                read-only access to discover and validate narrowly defined job messages sent by the same operator.
+            </p>
+            <div class="actions">
+                <a class="button primary" href="./privacy/">Read the Privacy Policy</a>
+                <a class="button secondary" href="mailto:shina.gstmu@gmail.com">Contact the operator</a>
+            </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="purpose-heading">
+            <div>
+                <p class="eyebrow">Purpose</p>
+                <h2 id="purpose-heading">A bounded secondary queue</h2>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>What it reads</h3>
+                    <p>
+                        The app searches the authorized Gmail account for self-sent messages with a fixed subject
+                        prefix and a fixed JSON job envelope. It reads only the message data needed to validate and
+                        process those queue entries.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>How it protects the queue</h3>
+                    <p>
+                        Messages must pass checks for the expected sender, recipient, queue, target machine, protocol,
+                        session, payload hash, and replay status before they can be accepted.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>What it cannot do</h3>
+                    <p>
+                        The Gmail integration cannot send, modify, label, or delete email. It does not request access
+                        to Google Drive, Calendar, Contacts, or other Google services.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section split" aria-labelledby="security-heading">
+            <div>
+                <p class="eyebrow">Security</p>
+                <h2 id="security-heading">Credentials stay protected on the local PC</h2>
+            </div>
+            <div class="prose">
+                <p>
+                    OAuth credentials are encrypted for the current Windows user with Windows Data Protection API
+                    (DPAPI). Plaintext access and refresh tokens are not stored in source control, GitHub Pages,
+                    Gmail messages, job payloads, or application logs.
+                </p>
+                <p>
+                    This tool is operated privately and is not offered as a public email service. For full details
+                    about data access, use, retention, and revocation, see the
+                    <a href="./privacy/">GALLERIA Local Worker Privacy Policy</a>.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section japanese" lang="ja" aria-labelledby="ja-heading">
+            <div>
+                <p class="eyebrow">日本語概要</p>
+                <h2 id="ja-heading">所有者専用のローカルワーカー</h2>
+            </div>
+            <div class="prose">
+                <p>
+                    GALLERIA Local Workerは、所有者のWindows PC上で動作する非公開の自動化ツールです。
+                    Gmail連携は読み取り専用で、同じ所有者が送信した所定形式のキューメッセージだけを検出・検証します。
+                </p>
+                <p><a href="./privacy/">プライバシーポリシーを確認する</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>GALLERIA Local Worker</span>
+        <span><a href="./privacy/">Privacy Policy</a> · <a href="mailto:shina.gstmu@gmail.com">shina.gstmu@gmail.com</a></span>
+    </footer>
+</body>
+</html>
