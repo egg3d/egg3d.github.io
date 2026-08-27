@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GALLERIA Local Worker</title>
-    <meta name="description" content="GALLERIA Local Worker is a private desktop automation tool that reads a narrowly defined Gmail queue with read-only access.">
+    <meta name="description" content="GALLERIA Local Worker is a private desktop automation tool with a bounded Gmail queue and per-file Google Drive artifact transport.">
     <meta property="og:title" content="GALLERIA Local Worker">
-    <meta property="og:description" content="Private, local-first Gmail queue automation with read-only access.">
+    <meta property="og:description" content="Private, local-first queue automation with least-privilege temporary artifact transport.">
     <meta property="og:url" content="https://egg3d.github.io/galleria-local-worker/">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" sizes="32x32" href="/Images/egg_3d_Favicon/favicon-32x32.png">
@@ -27,10 +27,11 @@
     <main>
         <section class="hero">
             <p class="eyebrow">Private desktop automation</p>
-            <h1>Local-first Gmail queue processing for one trusted operator.</h1>
+            <h1>Local-first queue processing and bounded artifact transport for one trusted operator.</h1>
             <p class="lead">
                 GALLERIA Local Worker runs on the owner's Windows PC. Its Gmail Secondary Queue integration uses
                 read-only access to discover and validate narrowly defined job messages sent by the same operator.
+                A separate Google Drive integration can transfer one explicitly identified update artifact at a time.
             </p>
             <div class="actions">
                 <a class="button primary" href="./privacy/">Read the Privacy Policy</a>
@@ -62,8 +63,9 @@
                 <article class="card">
                     <h3>What it cannot do</h3>
                     <p>
-                        The Gmail integration cannot send, modify, label, or delete email. It does not request access
-                        to Google Drive, Calendar, Contacts, or other Google services.
+                        The Gmail integration cannot send, modify, label, or delete email. The separate Drive artifact
+                        integration cannot list, search, traverse folders, share, or read unrelated files. It uses only
+                        per-file <code>drive.file</code> access for explicitly created or granted artifacts.
                     </p>
                 </article>
             </div>
@@ -79,6 +81,10 @@
                     OAuth credentials are encrypted for the current Windows user with Windows Data Protection API
                     (DPAPI). Plaintext access and refresh tokens are not stored in source control, GitHub Pages,
                     Gmail messages, job payloads, or application logs.
+                </p>
+                <p>
+                    Gmail and Drive use separate OAuth clients, scopes, encrypted credential files, and runtime roles.
+                    Google Drive is temporary package-byte transport, not a queue. Notion and Gmail remain the control plane.
                 </p>
                 <p>
                     This tool is operated privately and is not offered as a public email service. For full details
@@ -97,6 +103,7 @@
                 <p>
                     GALLERIA Local Workerは、所有者のWindows PC上で動作する非公開の自動化ツールです。
                     Gmail連携は読み取り専用で、同じ所有者が送信した所定形式のキューメッセージだけを検出・検証します。
+                    Google Drive連携は別認証で、明示された一時artifactファイルだけを転送します。Drive全体の一覧・検索・公開共有は行いません。
                 </p>
                 <p><a href="./privacy/">プライバシーポリシーを確認する</a></p>
             </div>

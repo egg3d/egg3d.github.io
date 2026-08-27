@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | GALLERIA Local Worker</title>
-    <meta name="description" content="Privacy Policy for the GALLERIA Local Worker Gmail Secondary Queue integration.">
+    <meta name="description" content="Privacy Policy for the GALLERIA Local Worker Gmail Secondary Queue and Google Drive Temporary Artifact Transport integrations.">
     <meta property="og:title" content="Privacy Policy | GALLERIA Local Worker">
     <meta property="og:description" content="How GALLERIA Local Worker accesses, uses, stores, and protects Google user data.">
     <meta property="og:url" content="https://egg3d.github.io/galleria-local-worker/privacy/">
@@ -28,9 +28,10 @@
         <section class="hero policy-hero">
             <p class="eyebrow">Privacy Policy</p>
             <h1>How GALLERIA Local Worker handles Google user data</h1>
-            <p class="lead">Effective date: August 26, 2026</p>
+            <p class="lead">Effective date: August 28, 2026</p>
             <p class="policy-note">
-                This policy applies only to GALLERIA Local Worker and its Gmail Secondary Queue integration.
+                This policy applies only to GALLERIA Local Worker, its Gmail Secondary Queue integration,
+                and its Google Drive Temporary Artifact Transport integration.
             </p>
         </section>
 
@@ -46,13 +47,16 @@
             <article class="policy-card">
                 <h2>2. Google data accessed</h2>
                 <p>
-                    The app requests the Gmail read-only OAuth scope. It may read Gmail message metadata and content
+                    The Gmail integration requests the Gmail read-only OAuth scope. It may read Gmail message metadata and content
                     required to find and validate self-sent queue messages that use the fixed subject prefix
                     <code>[GALLERIA-V2-JOB]</code> and the expected JSON envelope.
                 </p>
                 <p>
-                    The app does not request permission to send, modify, label, or delete messages. It does not request
-                    access to Google Drive, Calendar, Contacts, or other Google services.
+                    The Gmail integration does not request permission to send, modify, label, or delete messages.
+                    A separate Drive integration requests only <code>https://www.googleapis.com/auth/drive.file</code>.
+                    It may create a temporary artifact file through the operator-only bounded uploader, or read one exact
+                    artifact file explicitly granted to this OAuth app. It does not request access to the user's whole Drive,
+                    Calendar, Contacts, or other Google services.
                 </p>
             </article>
 
@@ -63,13 +67,18 @@
                     recipient, queue, target machine, protocol, session, payload hash, and replay status, and record the
                     minimal local audit state needed to prevent duplicate processing.
                 </p>
+                <p>
+                    Drive data is used only to obtain metadata and package bytes for one descriptor-supplied file ID,
+                    validate its expected size and SHA-256, and create immutable local staging. Drive is not used as a
+                    queue and is not polled, listed, searched, or traversed. Drive filenames and folders are not authority.
+                </p>
                 <p>Google user data is not used for advertising, profiling, marketing, or training AI models.</p>
             </article>
 
             <article class="policy-card">
                 <h2>4. Local storage and security</h2>
                 <p>
-                    OAuth credentials are stored on the operator's Windows PC and encrypted for the current Windows user
+                    Gmail and Drive OAuth credentials are stored separately on the operator's Windows PC and encrypted for the current Windows user
                     with Windows Data Protection API (DPAPI). Plaintext OAuth tokens are not stored in source control,
                     GitHub Pages, Gmail messages, job payloads, or application logs.
                 </p>
@@ -78,6 +87,11 @@
                     validation outcomes, and processing timestamps. These records are kept locally for operational
                     integrity and troubleshooting.
                 </p>
+                <p>
+                    Downloaded artifact bytes are streamed into a bounded local staging area, verified against an expected
+                    size and SHA-256, atomically finalized read-only, and then processed locally. Tokens and client secrets
+                    are never written to Notion, Gmail, jobs, logs, evidence, configuration, or manifests.
+                </p>
             </article>
 
             <article class="policy-card">
@@ -85,7 +99,8 @@
                 <p>
                     Google user data is not sold, rented, shared with advertisers, or transferred to third parties.
                     Data is processed locally by the operator's worker except where transmission to Google is required
-                    to use the Gmail API. Disclosure may occur only if required by applicable law.
+                    to use the Gmail and Drive APIs. The Drive integration does not create public or anyone-with-link
+                    permissions. Disclosure may occur only if required by applicable law.
                 </p>
             </article>
 
@@ -93,8 +108,10 @@
                 <h2>6. Retention and deletion</h2>
                 <p>
                     Protected OAuth credentials and local audit records are retained on the operator's PC until they are
-                    manually removed or are no longer needed for the queue. The operator can delete the protected local
-                    credential and related local records at any time.
+                    manually removed or are no longer needed. Temporary Drive artifacts are not deleted automatically.
+                    A test artifact may be removed only by its exact file ID after verification evidence is finalized;
+                    production retention and cleanup require a separate policy and approval. The operator can delete the
+                    protected local credentials and related local records at any time.
                 </p>
             </article>
 
@@ -102,8 +119,8 @@
                 <h2>7. Revoking access</h2>
                 <p>
                     Access can be revoked from the Google Account's third-party connections page. The operator can also
-                    stop the local worker and remove its encrypted credential. After revocation, the app can no longer
-                    access Gmail unless authorization is granted again.
+                    stop the local worker and remove the relevant encrypted credential. Gmail and Drive grants are separate.
+                    After revocation, the affected integration can no longer access Google data unless authorization is granted again.
                 </p>
                 <p>
                     <a href="https://myaccount.google.com/connections" target="_blank" rel="noopener noreferrer">Manage Google Account connections</a>
@@ -145,7 +162,8 @@
             <div class="prose">
                 <p>
                     本アプリはGmailの読み取り専用権限を使用し、所有者自身が送信した所定形式のキューメッセージだけを処理します。
-                    メールの送信・変更・削除は行わず、OAuth認証情報はWindows DPAPIで暗号化してローカル保存します。
+                    Google Driveは別の<code>drive.file</code>認証を使い、明示された一時artifactだけを転送します。
+                    メールの送信・変更・削除、Drive全体の一覧・検索・公開共有は行わず、OAuth認証情報はWindows DPAPIで暗号化して個別にローカル保存します。
                     Googleユーザーデータの販売、広告利用、第三者提供は行いません。
                 </p>
             </div>
