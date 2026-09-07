@@ -61,7 +61,7 @@
                 <div>
                     <p class="section-kicker">Health MCP privacy</p>
                     <h2 id="health-privacy-title">Health MCP / Fitbit Health Gateway</h2>
-                    <p class="section-description">最終更新日：2026年9月3日。以下は本人専用のHealth MCPに適用する個別ポリシーです。後掲のゲーム向け広告・PlayFabに関する説明は、Health MCPには適用しません。</p>
+                    <p class="section-description">最終更新日：2026年9月7日。以下は本人専用のHealth MCPに適用する個別ポリシーです。後掲のゲーム向け広告・PlayFabに関する説明は、Health MCPには適用しません。</p>
                 </div>
             </div>
             <div class="detail-layout">
@@ -71,19 +71,19 @@
                 </article>
                 <article class="detail-card">
                     <h3>利用目的とOpenAIへの転送</h3>
-                    <p>本人の要求に応じ、取得結果を本人の端末上のゲートウェイからOpenAI Secure MCP Tunnelを経由してOpenAIのChatGPTへ送信し、履歴の表示、集計、本人との対話処理に利用します。接続診断でも、疎通確認のため少量の記録を読み取る場合があります。健康情報を広告配信、販売、データ仲介、信用評価に利用しません。一般向け公開ページに健康値や認証情報を掲載しません。</p>
+                    <p>本人の要求に応じ、Google Health APIから取得した結果をCloudflare Workers上のRemote MCPで処理し、OpenAIのChatGPTへ送信して履歴の表示、集計、本人との対話処理に利用します。旧GALLERIAゲートウェイとOpenAI Secure MCP Tunnelは通常停止した復旧用として保持し、通常の転送経路では使用しません。接続診断でも疎通確認のため少量の記録を読み取る場合があります。健康情報を広告配信、販売、データ仲介、信用評価に利用しません。一般向け公開ページに健康値や認証情報を掲載しません。</p>
                     <p>Google Health APIから受領した情報の利用および他のアプリへの転送は、<a class="inline-link" href="https://developers.google.com/health/policies/health-api-developer-user-data-policy">Google Health API Developer and User Data Policy</a>のLimited Use要件を含む制限に従います。</p>
                 </article>
                 <article class="detail-card">
                     <h3>保存と保護</h3>
-                    <p>Google Healthの元データはGoogle側に保存されます。ゲートウェイは取得結果を要求への応答としてメモリ上で処理し、健康履歴を独自の永続データベースに蓄積する機能はありません。運用診断には接続状態、処理時刻、取得件数、エラー分類などを記録します。健康値そのものや認証情報は診断レポートへ記録しない運用とします。</p>
-                    <p>認証情報は健康履歴と分けて管理します。継続接続に必要なrefresh tokenやclient secretは、本人のWindowsアカウントに結び付いた暗号化とファイルアクセス制限で保護します。短期間有効なaccess tokenは実行プロセスのメモリで扱います。認証情報は接続の継続に必要な期間保持され、安全な更新のため暗号化した旧情報を退避する場合があります。</p>
+                    <p>Google Healthの元データはGoogle側に保存されます。Cloudflare Workersは取得結果を要求への応答としてメモリ上で処理し、健康recordをKV、Durable Objects、D1、R2へ保存しません。健康履歴を独自の永続データベースへ蓄積する機能はありません。運用診断は接続状態、処理時刻、取得件数、エラー分類に限定し、健康値そのものや認証情報を記録しない運用とします。</p>
+                    <p>認証情報は健康履歴と分けて管理します。Cloudflare Worker secretsでclient secretと暗号鍵を保護し、Google access tokenとrefresh tokenは暗号化してGoogleGrant Durable Objectに保存します。KVとDurable Objectsには接続に必要なOAuthの認可・client情報や更新競合制御の状態も保持します。旧GALLERIAの資格情報と暗号化退避ファイルは、本人のWindowsアカウントに結び付いた暗号化とファイルアクセス制限で保護して復旧用に保持します。認証状態は接続の継続や安全な更新に必要な期間管理します。</p>
                     <p>ChatGPTへ送信された結果は会話等に残る場合があります。OpenAI側の保存や処理には、使用するサービス、契約、アカウント設定および<a class="inline-link" href="https://openai.com/policies/privacy-policy/">OpenAIのプライバシーポリシー</a>が適用されます。ゲートウェイの停止や接続解除だけで、GoogleやChatGPTの保存済みデータが自動削除されるとは限りません。</p>
                 </article>
                 <article class="detail-card">
                     <h3>アクセス撤回と削除</h3>
-                    <p><a class="inline-link" href="https://myaccount.google.com/connections">Googleアカウントの接続管理</a>から本アプリのアクセス権を撤回すると、その認可による継続的な取得を停止できます。直ちに通信を止める場合はローカルのゲートウェイを停止してください。ChatGPT側でもアプリの接続を解除できます。</p>
-                    <p>Google Healthの元データはGoogle Health側の管理機能、ChatGPTの会話はChatGPT側の管理機能で削除してください。ローカルの認証情報・暗号化退避ファイル・運用診断は、本人がゲートウェイを停止したうえで管理・削除できます。本アプリは元データや他サービス上の会話を削除する代行機能を持ちません。</p>
+                    <p><a class="inline-link" href="https://myaccount.google.com/connections">Googleアカウントの接続管理</a>から本アプリのアクセス権を撤回し、ChatGPT側で該当Cloudアプリの接続を解除できます。GALLERIAのローカルゲートウェイを停止するだけではCloudflareの通信は停止しません。アクセス撤回で既に有効な全access tokenが同時に即時無効になることは保証しません。</p>
+                    <p>Google Healthの元データはGoogle Health側、ChatGPTの会話はChatGPT側の管理機能で削除してください。CloudflareのOAuth状態、旧GALLERIAの資格情報・暗号化退避ファイル・運用診断は、本人が対象を指定してそれぞれ管理・削除します。接続解除だけで他サービスの保存済みデータは自動削除されません。本アプリは元データや他サービス上の会話を削除する代行機能を持ちません。</p>
                 </article>
                 <article class="detail-card">
                     <h3>問い合わせと変更</h3>
@@ -92,9 +92,9 @@
                 <article class="detail-card" lang="en">
                     <h3>English summary</h3>
                     <p>Health MCP / Fitbit Health Gateway is a personal tool operated by the developer of egg 3d Studio. It reads the account owner's activity and fitness, health metrics and measurements, and sleep history from Google Health using three read-only scopes. It does not write health data and does not require Health Connect or a Pixel device for its primary Google Health source.</p>
-                    <p>At the owner's request, results pass through the owner's local gateway and OpenAI Secure MCP Tunnel to OpenAI's ChatGPT for conversation, display and aggregation. Diagnostics may make small reads to check connectivity. Health data is not sold or used for advertising, data brokerage or credit decisions. Use and transfer of information received from Google Health follow the Google Health API Developer and User Data Policy, including its Limited Use requirements.</p>
-                    <p>The gateway processes health results in memory without a persistent health-history database. Operational diagnostics record statuses, timestamps, counts and error categories. Credentials are managed separately: persistent secrets use Windows account-bound encryption and restricted file access; access tokens remain in memory. Encrypted credential backups may be retained during updates. ChatGPT may retain results in conversations under the applicable service terms, settings and privacy policy.</p>
-                    <p>Revoke the app in your Google Account connections to end continued access, stop the local gateway to stop communication immediately, or disconnect it in ChatGPT. Manage original health data in Google Health and conversations in ChatGPT. The owner can remove local credentials, encrypted backups and diagnostics after stopping the gateway; disconnecting does not automatically delete data held by other services. Contact: egg3dcg@gmail.com. Updated September 3, 2026. The game-specific advertising and PlayFab sections below do not apply to Health MCP.</p>
+                    <p>At the owner's request, Google Health results are processed by Remote MCP on Cloudflare Workers and sent to OpenAI's ChatGPT for conversation, display and aggregation. The old GALLERIA gateway and OpenAI Secure MCP Tunnel are retained as a normally stopped fallback, outside the normal route. Diagnostics may make small reads. Health data is not sold or used for advertising, data brokerage or credit decisions. Use and transfer follow the Google Health API Developer and User Data Policy, including Limited Use requirements.</p>
+                    <p>Cloudflare Workers processes health results in memory and does not store health records in KV, Durable Objects, D1 or R2. Operational diagnostics contain statuses, timestamps, counts and error categories, without health values or credentials. Worker secrets protect client secrets and encryption keys; Google access and refresh tokens are encrypted in the GoogleGrant Durable Object. KV and Durable Objects also retain necessary OAuth client, authorization and refresh coordination state. Legacy GALLERIA credentials and encrypted backups remain protected by Windows account-bound encryption and restricted file access. ChatGPT may retain results under its applicable terms, settings and privacy policy.</p>
+                    <p>Revoke access in Google Account connections and disconnect the Cloud app in ChatGPT. Stopping the local gateway alone does not stop Cloudflare communication; immediate invalidation of every existing access token is not guaranteed. Manage original health data in Google Health and conversations in ChatGPT. The owner separately manages Cloudflare OAuth state and retained legacy credentials, encrypted backups and diagnostics. Disconnection does not automatically delete other services' data. Contact: egg3dcg@gmail.com. Updated September 7, 2026. The game-specific advertising and PlayFab sections below do not apply to Health MCP.</p>
                 </article>
             </div>
         </section>
@@ -259,3 +259,4 @@
     </main>
 </body>
 </html>
+
