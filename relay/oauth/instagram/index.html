@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Relay Instagram connection</title></head>
+<body><main><h1>Returning to Relay</h1><p id="status">Completing the Instagram connection on this computer.</p></main>
+<script>
+const query = new URLSearchParams(location.search);
+const state = query.get('state') || '';
+const code = query.get('code') || '';
+if (/^[a-f0-9]{64}$/.test(state) && code && code.length < 4096) {
+  const target = new URL('http://127.0.0.1:4408/api/instagram/oauth/callback');
+  target.searchParams.set('state', state);
+  target.searchParams.set('code', code);
+  location.replace(target.href);
+} else {
+  document.querySelector('#status').textContent = 'Connection was not completed. Return to Relay and start again.';
+}
+</script></body></html>
