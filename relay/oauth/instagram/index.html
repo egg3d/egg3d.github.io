@@ -5,6 +5,7 @@
 const query = new URLSearchParams(location.search);
 const state = query.get('state') || '';
 const code = query.get('code') || '';
+history.replaceState(null, '', location.pathname);
 if (/^[a-f0-9]{64}$/.test(state) && code && code.length < 4096) {
   const target = new URL('http://127.0.0.1:4408/api/instagram/oauth/callback');
   target.searchParams.set('state', state);
